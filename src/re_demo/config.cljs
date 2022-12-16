@@ -1,8 +1,8 @@
 (ns re-demo.config
   (:require-macros
-    [re-com.core       :refer []])
+    [re-com-tailwind.core       :refer []])
   (:require
-   [re-com.core       :refer [at h-box v-box gap line title p hyperlink-href]]
+   [re-com-tailwind.core       :refer [at h-box v-box gap line title p hyperlink-href]]
    [re-demo.utils     :refer [panel-title title2 title3]]))
 
 

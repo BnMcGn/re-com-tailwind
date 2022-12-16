@@ -1,8 +1,8 @@
 (ns re-demo.input-time
-  (:require [re-com.core       :refer [at h-box v-box box gap input-time label title button checkbox p]]
-            [re-com.input-time :refer [input-time-parts-desc input-time-args-desc]]
+  (:require [re-com-tailwind.core       :refer [at h-box v-box box gap input-time label title button checkbox p]]
+            [re-com-tailwind.input-time :refer [input-time-parts-desc input-time-args-desc]]
             [re-demo.utils     :refer [panel-title title2 title3 parts-table args-table github-hyperlink status-text]]
-            [re-com.util       :refer [px]]
+            [re-com-tailwind.util       :refer [px]]
             [reagent.core      :as    reagent]))
 
 

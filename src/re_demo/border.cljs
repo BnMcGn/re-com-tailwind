@@ -1,9 +1,9 @@
 (ns re-demo.border
   (:require-macros
-    [re-com.core   :refer []])
+    [re-com-tailwind.core   :refer []])
   (:require
-    [re-com.core   :refer [at h-box v-box box gap border p]]
-    [re-com.box    :refer [border-args-desc]]
+    [re-com-tailwind.core   :refer [at h-box v-box box gap border p]]
+    [re-com-tailwind.box    :refer [border-args-desc]]
     [re-demo.utils :refer [panel-title title2 args-table github-hyperlink status-text]]))
 
 

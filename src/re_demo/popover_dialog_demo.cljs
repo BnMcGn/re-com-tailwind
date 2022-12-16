@@ -1,6 +1,6 @@
 (ns re-demo.popover-dialog-demo
-  (:require [re-com.core  :refer [at h-box v-box box gap line label checkbox radio-button button single-dropdown popover-content-wrapper popover-anchor-wrapper]]
-            [re-com.util  :refer [deref-or-value]]
+  (:require [re-com-tailwind.core  :refer [at h-box v-box box gap line label checkbox radio-button button single-dropdown popover-content-wrapper popover-anchor-wrapper]]
+            [re-com-tailwind.util  :refer [deref-or-value]]
             [reagent.core :as    reagent]))
 
 

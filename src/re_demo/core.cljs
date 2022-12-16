@@ -1,6 +1,6 @@
 (ns re-demo.core
   (:require-macros
-    [re-com.core            :refer []]
+    [re-com-tailwind.core            :refer []]
     [cljs.core.async.macros :refer [go]]
     [secretary.core         :refer [defroute]])
   (:require [goog.events                   :as    events]
@@ -8,9 +8,9 @@
             [reagent.dom                   :as    rdom]
             [alandipert.storage-atom       :refer [local-storage]]
             [secretary.core                :as    secretary]
-            [re-com.core                   :refer [at h-box v-box box gap line scroller border label p title alert-box h-split] :refer-macros [handler-fn]]
-            [re-com.config                 :refer [version]]
-            [re-com.util                   :refer [get-element-by-id item-for-id]]
+            [re-com-tailwind.core                   :refer [at h-box v-box box gap line scroller border label p title alert-box h-split] :refer-macros [handler-fn]]
+            [re-com-tailwind.config                 :refer [version]]
+            [re-com-tailwind.util                   :refer [get-element-by-id item-for-id]]
             [re-demo.utils                 :refer [panel-title scroll-to-top]]
             [re-demo.debug                 :as    debug]
             [re-demo.config                :as    config]
@@ -244,7 +244,7 @@
                        :child [v-box
                                :src      (at)
                                :size     "1"
-                               :children [[re-com-title-box]
+                               :children [[re-com-tailwind-title-box]
                                           [left-side-nav-bar selected-tab-id on-select-tab]]]]
        :panel-2       [scroller
                        :src   (at)

@@ -1,10 +1,10 @@
 (ns re-demo.v-table
   (:require
-    [re-com.text               :refer [p]]
-    [re-com.box                :refer [h-box v-box box gap]]
-    [re-com.v-table            :refer [v-table-parts-desc v-table-args-desc]]
-    [re-com.tabs               :refer [horizontal-tabs]]
-    [re-com.util               :refer [px]]
+    [re-com-tailwind.text               :refer [p]]
+    [re-com-tailwind.box                :refer [h-box v-box box gap]]
+    [re-com-tailwind.v-table            :refer [v-table-parts-desc v-table-args-desc]]
+    [re-com-tailwind.tabs               :refer [horizontal-tabs]]
+    [re-com-tailwind.util               :refer [px]]
     [re-demo.v-table-sections  :refer [sections-render]]
     [re-demo.v-table-demo      :refer [demo]]
     [re-demo.v-table-renderers :refer [table-showing-renderers]]

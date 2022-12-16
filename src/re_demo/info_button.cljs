@@ -1,8 +1,8 @@
 (ns re-demo.info-button
-  (:require [re-com.core    :refer [at h-box v-box box gap line info-button label input-text hyperlink-href p]]
-            [re-com.buttons :refer [info-button-parts-desc info-button-args-desc]]
+  (:require [re-com-tailwind.core    :refer [at h-box v-box box gap line info-button label input-text hyperlink-href p]]
+            [re-com-tailwind.buttons :refer [info-button-parts-desc info-button-args-desc]]
             [re-demo.utils  :refer [panel-title title2 title3 parts-table args-table github-hyperlink status-text]]
-            [re-com.util    :refer [px]]))
+            [re-com-tailwind.util    :refer [px]]))
 
 (defn info-button-demo
   []

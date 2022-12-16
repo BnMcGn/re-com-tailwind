@@ -1,6 +1,6 @@
 (ns re-demo.scroller
-  (:require [re-com.core   :refer [at h-box v-box gap scroller p]]
-            [re-com.box    :refer [scroller-args-desc]]
+  (:require [re-com-tailwind.core   :refer [at h-box v-box gap scroller p]]
+            [re-com-tailwind.box    :refer [scroller-args-desc]]
             [re-demo.utils :refer [panel-title title2 args-table github-hyperlink status-text]]))
 
 

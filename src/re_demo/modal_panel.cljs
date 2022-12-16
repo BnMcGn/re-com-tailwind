@@ -1,8 +1,8 @@
 (ns re-demo.modal-panel
-  (:require [re-com.core        :refer [at h-box v-box box gap line border title label modal-panel progress-bar input-text checkbox button p]]
-            [re-com.modal-panel :refer [modal-panel-parts-desc modal-panel-args-desc]]
+  (:require [re-com-tailwind.core        :refer [at h-box v-box box gap line border title label modal-panel progress-bar input-text checkbox button p]]
+            [re-com-tailwind.modal-panel :refer [modal-panel-parts-desc modal-panel-args-desc]]
             [re-demo.utils      :refer [panel-title title2 title3 parts-table args-table github-hyperlink status-text]]
-            [re-com.util        :refer [px]]
+            [re-com-tailwind.util        :refer [px]]
             [reagent.core       :as    reagent]))
 
 

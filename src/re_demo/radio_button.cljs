@@ -1,8 +1,8 @@
 (ns re-demo.radio-button
-  (:require [re-com.core          :refer [at h-box v-box box gap checkbox title line radio-button p]]
-            [re-com.radio-button  :refer [radio-button-parts-desc radio-button-args-desc]]
+  (:require [re-com-tailwind.core          :refer [at h-box v-box box gap checkbox title line radio-button p]]
+            [re-com-tailwind.radio-button  :refer [radio-button-parts-desc radio-button-args-desc]]
             [re-demo.utils        :refer [panel-title title2 title3 parts-table args-table github-hyperlink status-text]]
-            [re-com.util          :refer [px]]
+            [re-com-tailwind.util          :refer [px]]
             [reagent.core         :as    reagent]))
 
 (defn radios-demo

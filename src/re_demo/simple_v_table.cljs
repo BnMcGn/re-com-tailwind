@@ -1,10 +1,10 @@
 (ns re-demo.simple-v-table
   (:require-macros
-    [re-com.core                           :refer []])
+    [re-com-tailwind.core                           :refer []])
   (:require
-    [re-com.core                           :refer [at h-box gap v-box p line horizontal-tabs]]
-    [re-com.simple-v-table                 :refer [simple-v-table-parts-desc simple-v-table-args-desc]]
-    [re-com.util                           :refer [px]]
+    [re-com-tailwind.core                           :refer [at h-box gap v-box p line horizontal-tabs]]
+    [re-com-tailwind.simple-v-table                 :refer [simple-v-table-parts-desc simple-v-table-args-desc]]
+    [re-com-tailwind.util                           :refer [px]]
     [re-demo.simple-v-table-sales          :as simple-v-table-sales]
     [re-demo.simple-v-table-periodic-table :as simple-v-table-periodic-table]
     [re-demo.utils                         :refer [source-reference panel-title title2 title3 parts-table args-table status-text new-in-version]]

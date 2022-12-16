@@ -1,5 +1,5 @@
 (ns re-demo.layout
-  (:require [re-com.core   :refer [at h-box v-box box gap line title label hyperlink-href p md-icon-button]]
+  (:require [re-com-tailwind.core   :refer [at h-box v-box box gap line title label hyperlink-href p md-icon-button]]
             [re-demo.utils :refer [panel-title title2]]))
 
 

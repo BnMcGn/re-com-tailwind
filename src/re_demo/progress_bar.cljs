@@ -1,8 +1,8 @@
 (ns re-demo.progress-bar
-  (:require [re-com.core         :refer [at h-box v-box box gap line label title progress-bar slider checkbox p]]
-            [re-com.progress-bar :refer [progress-bar-parts-desc progress-bar-args-desc]]
+  (:require [re-com-tailwind.core         :refer [at h-box v-box box gap line label title progress-bar slider checkbox p]]
+            [re-com-tailwind.progress-bar :refer [progress-bar-parts-desc progress-bar-args-desc]]
             [re-demo.utils       :refer [panel-title title2 title3 parts-table args-table github-hyperlink status-text]]
-            [re-com.util         :refer [px]]
+            [re-com-tailwind.util         :refer [px]]
             [reagent.core        :as    reagent]))
 
 (defn progress-bar-demo

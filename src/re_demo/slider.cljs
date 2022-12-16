@@ -1,11 +1,11 @@
 (ns re-demo.slider
   (:require-macros
-    [re-com.core   :refer []])
+    [re-com-tailwind.core   :refer []])
   (:require
-    [re-com.core   :refer [at h-box v-box box gap line label title slider checkbox input-text horizontal-bar-tabs vertical-bar-tabs p]]
-    [re-com.slider :refer [slider-parts-desc slider-args-desc]]
+    [re-com-tailwind.core   :refer [at h-box v-box box gap line label title slider checkbox input-text horizontal-bar-tabs vertical-bar-tabs p]]
+    [re-com-tailwind.slider :refer [slider-parts-desc slider-args-desc]]
     [re-demo.utils :refer [panel-title title2 title3 parts-table args-table github-hyperlink status-text]]
-    [re-com.util   :refer [px]]
+    [re-com-tailwind.util   :refer [px]]
     [reagent.core  :as    reagent]))
 
 (defn slider-demo

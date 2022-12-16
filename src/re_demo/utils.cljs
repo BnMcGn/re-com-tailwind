@@ -1,9 +1,9 @@
 (ns re-demo.utils
   (:require
-    [re-com.core           :refer [title line label hyperlink-href align-style at]]
-    [re-com.box            :refer [box gap h-box v-box]]
-    [re-com.text           :refer [p]]
-    [re-com.util           :refer [px]]))
+    [re-com-tailwind.core           :refer [title line label hyperlink-href align-style at]]
+    [re-com-tailwind.box            :refer [box gap h-box v-box]]
+    [re-com-tailwind.text           :refer [p]]
+    [re-com-tailwind.util           :refer [px]]))
 
 (defn github-hyperlink
   "given a label and a relative path, return a component which hyperlinks to the GitHub URL in a new tab"

@@ -1,6 +1,6 @@
 (ns re-demo.v-table-renderers
-  (:require [re-com.core   :refer [at v-box v-table label]]
-            [re-com.util    :refer [px]]
+  (:require [re-com-tailwind.core   :refer [at v-box v-table label]]
+            [re-com-tailwind.util    :refer [px]]
             [reagent.core  :as reagent]))
 
 

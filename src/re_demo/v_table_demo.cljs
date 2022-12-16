@@ -1,6 +1,6 @@
 (ns re-demo.v-table-demo
-  (:require [re-com.core        :refer [at h-box gap v-box box v-table show-row-data-on-alt-click line p label popover-content-wrapper] :refer-macros [handler-fn]]
-            [re-com.util        :refer [px]]
+  (:require [re-com-tailwind.core        :refer [at h-box gap v-box box v-table show-row-data-on-alt-click line p label popover-content-wrapper] :refer-macros [handler-fn]]
+            [re-com-tailwind.util        :refer [px]]
             [re-demo.utils      :refer [title2 github-hyperlink source-reference]]
             [cljs-time.core     :as time.core]
             [cljs-time.format   :as time.format]

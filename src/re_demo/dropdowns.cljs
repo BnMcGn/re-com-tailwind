@@ -1,12 +1,12 @@
 (ns re-demo.dropdowns
   (:require-macros
-    [re-com.core     :refer []])
+    [re-com-tailwind.core     :refer []])
   (:require
-    [re-com.core     :refer [at h-box v-box box gap single-dropdown input-text checkbox label title hyperlink-href p p-span line]]
-    [re-com.dropdown :refer [filter-choices-by-keyword single-dropdown-parts-desc single-dropdown-args-desc]]
-    [re-com.util     :refer [item-for-id]]
+    [re-com-tailwind.core     :refer [at h-box v-box box gap single-dropdown input-text checkbox label title hyperlink-href p p-span line]]
+    [re-com-tailwind.dropdown :refer [filter-choices-by-keyword single-dropdown-parts-desc single-dropdown-args-desc]]
+    [re-com-tailwind.util     :refer [item-for-id]]
     [re-demo.utils   :refer [panel-title title2 title3 parts-table args-table github-hyperlink status-text]]
-    [re-com.util     :refer [px]]
+    [re-com-tailwind.util     :refer [px]]
     [reagent.core    :as    reagent]))
 
 

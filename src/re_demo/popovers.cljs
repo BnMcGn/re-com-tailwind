@@ -1,8 +1,8 @@
 (ns re-demo.popovers
-  (:require [re-com.core                 :refer [at h-box v-box box gap line scroller border label title input-text checkbox radio-button button hyperlink hyperlink-href p single-dropdown popover-content-wrapper popover-anchor-wrapper popover-border popover-tooltip flex-child-style] :refer-macros [handler-fn]]
-            [re-com.popover              :refer [popover-content-wrapper-args-desc popover-content-wrapper-parts-desc popover-anchor-wrapper-parts-desc popover-anchor-wrapper-args-desc popover-anchor-wrapper-parts-desc popover-border-args-desc popover-border-parts-desc popover-tooltip-args-desc popover-tooltip-parts-desc]]
+  (:require [re-com-tailwind.core                 :refer [at h-box v-box box gap line scroller border label title input-text checkbox radio-button button hyperlink hyperlink-href p single-dropdown popover-content-wrapper popover-anchor-wrapper popover-border popover-tooltip flex-child-style] :refer-macros [handler-fn]]
+            [re-com-tailwind.popover              :refer [popover-content-wrapper-args-desc popover-content-wrapper-parts-desc popover-anchor-wrapper-parts-desc popover-anchor-wrapper-args-desc popover-anchor-wrapper-parts-desc popover-border-args-desc popover-border-parts-desc popover-tooltip-args-desc popover-tooltip-parts-desc]]
             [re-demo.popover-dialog-demo :as    popover-dialog-demo]
-            [re-com.util                 :refer [get-element-by-id px]]
+            [re-com-tailwind.util                 :refer [get-element-by-id px]]
             [re-demo.utils               :refer [panel-title title2 title3 parts-table args-table github-hyperlink status-text scroll-to-top]]
             [reagent.core                :as    reagent]))
 

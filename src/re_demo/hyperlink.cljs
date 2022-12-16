@@ -1,11 +1,11 @@
 (ns re-demo.hyperlink
   (:require-macros
-    [re-com.core    :refer []])
+    [re-com-tailwind.core    :refer []])
   (:require
-    [re-com.core    :refer [at h-box v-box box gap line label title checkbox hyperlink p]]
-    [re-com.buttons :refer [hyperlink-parts-desc hyperlink-args-desc]]
+    [re-com-tailwind.core    :refer [at h-box v-box box gap line label title checkbox hyperlink p]]
+    [re-com-tailwind.buttons :refer [hyperlink-parts-desc hyperlink-args-desc]]
     [re-demo.utils  :refer [panel-title title2 title3 parts-table args-table github-hyperlink status-text]]
-    [re-com.util    :refer [px]]
+    [re-com-tailwind.util    :refer [px]]
     [reagent.core   :as    reagent]))
 
 (defn hyperlink-demo

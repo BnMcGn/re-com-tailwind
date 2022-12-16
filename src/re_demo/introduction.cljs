@@ -1,5 +1,5 @@
 (ns re-demo.introduction
-  (:require [re-com.core   :refer [at h-box v-box box gap line title label hyperlink-href input-text p p-span]]
+  (:require [re-com-tailwind.core   :refer [at h-box v-box box gap line title label hyperlink-href input-text p p-span]]
             [re-demo.utils :refer [panel-title title2]]))
 
 

@@ -1,9 +1,9 @@
 (ns re-demo.box
   (:require-macros
-    [re-com.core   :refer []])
+    [re-com-tailwind.core   :refer []])
   (:require
-    [re-com.core   :refer [at h-box v-box box gap hyperlink-href p]]
-    [re-com.box    :refer [box-args-desc]]
+    [re-com-tailwind.core   :refer [at h-box v-box box gap hyperlink-href p]]
+    [re-com-tailwind.box    :refer [box-args-desc]]
     [re-demo.utils :refer [panel-title title2 args-table github-hyperlink status-text]]))
 
 
