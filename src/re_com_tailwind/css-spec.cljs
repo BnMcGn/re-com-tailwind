@@ -57,9 +57,6 @@
                        {:max-height max-height})}
    :v-box {:class ["rc-alert-list-v-box"]}})
 
-
-
-
 (def visualise-flow? false)
 
 (def re-com.box/box-base-css-spec
@@ -357,13 +354,6 @@
                            (and today (=date date today) (not disabled?))
                            ["rc-datepicker-today"]
                            :else []))))}})
-
-
-(ns re-com.dropdown
-  (:require
-    [goog.string     :as    gstring]
-    [goog.string.format]
-    [reagent.dom     :as    rdom]))
 
 (def re-com.dropdown/single-dropdown-css-spec
   {:main {:class (fn [{:keys [free-text? drop-showing? free-text-focused?]}]
@@ -760,8 +750,6 @@
            :style (merge (flex-child-style "none")
                          {:padding-left "8px"
                           :cursor "default"})}})
-
-
 
 (def list-style
   ;;TODO: These should be in CSS resource

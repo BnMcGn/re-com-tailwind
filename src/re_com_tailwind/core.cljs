@@ -1,4 +1,4 @@
-(ns re-com.core
+(ns re-com-tailwind.core
   (:require-macros
     [re-com.core])
   (:require
