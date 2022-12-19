@@ -1,15 +1,15 @@
 (ns re-demo.simple-v-table-sales
   (:require-macros
-    [re-com-tailwind.core           :refer []])
+    [re-com.core           :refer []])
   (:require
     [clojure.string        :as string]
     [goog.string           :as gstring]
     [goog.string.format]
     [reagent.core          :as reagent]
-    [re-com-tailwind.core           :refer [at label p slider hyperlink-href h-box v-box gap simple-v-table checkbox button]]
-    [re-com-tailwind.config         :refer [debug?]]
+    [re-com.core           :refer [at label p slider hyperlink-href h-box v-box gap simple-v-table checkbox button]]
+    [re-com.config         :refer [debug?]]
     [re-demo.utils         :refer [title3]]
-    [re-com-tailwind.util           :refer [px]]))
+    [re-com.util           :refer [px]]))
 
 ;; 50 randomly sampled names from most popular baby names in 2019. 
 (def names

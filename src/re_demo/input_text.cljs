@@ -1,8 +1,8 @@
 (ns re-demo.input-text
-  (:require [re-com-tailwind.core       :refer [at h-box v-box box gap line input-text input-password input-textarea label checkbox radio-button slider title p]]
-            [re-com-tailwind.input-text :refer [input-text-parts-desc input-text-args-desc]]
+  (:require [re-com.core       :refer [at h-box v-box box gap line input-text input-password input-textarea label checkbox radio-button slider title p]]
+            [re-com.input-text :refer [input-text-parts-desc input-text-args-desc]]
             [re-demo.utils     :refer [panel-title title2 title3 parts-table args-table github-hyperlink status-text]]
-            [re-com-tailwind.util       :refer [px]]
+            [re-com.util       :refer [px]]
             [clojure.string    :as    string]
             [reagent.core      :as    reagent]))
 

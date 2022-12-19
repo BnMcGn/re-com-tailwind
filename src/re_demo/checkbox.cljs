@@ -1,11 +1,11 @@
 (ns re-demo.checkbox
   (:require-macros
-    [re-com-tailwind.core     :refer []])
+    [re-com.core     :refer []])
   (:require
-    [re-com-tailwind.core     :refer [at h-box v-box box gap line checkbox label p]]
-    [re-com-tailwind.checkbox :refer [checkbox-parts-desc checkbox-args-desc]]
+    [re-com.core     :refer [at h-box v-box box gap line checkbox label p]]
+    [re-com.checkbox :refer [checkbox-parts-desc checkbox-args-desc]]
     [re-demo.utils   :refer [panel-title title2 title3 parts-table args-table github-hyperlink status-text]]
-    [re-com-tailwind.util     :refer [px]]
+    [re-com.util     :refer [px]]
     [reagent.core    :as    reagent]))
 
 

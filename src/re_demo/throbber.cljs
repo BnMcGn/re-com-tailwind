@@ -1,8 +1,8 @@
 (ns re-demo.throbber
-  (:require [re-com-tailwind.core     :refer [at h-box v-box box gap line button label throbber p]]
-            [re-com-tailwind.throbber :refer [throbber-parts-desc throbber-args-desc]]
+  (:require [re-com.core     :refer [at h-box v-box box gap line button label throbber p]]
+            [re-com.throbber :refer [throbber-parts-desc throbber-args-desc]]
             [re-demo.utils   :refer [panel-title title2 title3 parts-table args-table github-hyperlink status-text]]
-            [re-com-tailwind.util     :refer [px]]
+            [re-com.util     :refer [px]]
             [reagent.core    :as    reagent]))
 
 

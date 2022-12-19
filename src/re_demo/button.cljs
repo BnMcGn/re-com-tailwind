@@ -1,11 +1,11 @@
 (ns re-demo.button
   (:require-macros
-    [re-com-tailwind.core    :refer [handler-fn]])
+    [re-com.core    :refer [handler-fn]])
   (:require
-    [re-com-tailwind.core    :refer [at h-box v-box box gap line button label throbber hyperlink-href p p-span]]
-    [re-com-tailwind.buttons :refer [button-parts-desc button-args-desc]]
+    [re-com.core    :refer [at h-box v-box box gap line button label throbber hyperlink-href p p-span]]
+    [re-com.buttons :refer [button-parts-desc button-args-desc]]
     [re-demo.utils  :refer [panel-title title2 title3 parts-table args-table github-hyperlink status-text]]
-    [re-com-tailwind.util    :refer [px]]
+    [re-com.util    :refer [px]]
     [reagent.core   :as    reagent]))
 
 

@@ -1,9 +1,9 @@
 (ns re-demo.tabs
   (:require
-    [re-com-tailwind.core             :refer [at h-box v-box box gap line scroller border horizontal-tabs horizontal-bar-tabs vertical-bar-tabs horizontal-pill-tabs vertical-pill-tabs label button single-dropdown p]]
-    [re-com-tailwind.tabs             :refer [horizontal-tabs-args-desc bar-tabs-args-desc pill-tabs-args-desc
+    [re-com.core             :refer [at h-box v-box box gap line scroller border horizontal-tabs horizontal-bar-tabs vertical-bar-tabs horizontal-pill-tabs vertical-pill-tabs label button single-dropdown p]]
+    [re-com.tabs             :refer [horizontal-tabs-args-desc bar-tabs-args-desc pill-tabs-args-desc
                                      horizontal-tabs-parts-desc bar-tabs-parts-desc pill-tabs-parts-desc]]
-    [re-com-tailwind.util             :refer [item-for-id]]
+    [re-com.util             :refer [item-for-id]]
     [re-demo.utils           :refer [panel-title title2 parts-table args-table github-hyperlink status-text]]
     [alandipert.storage-atom :refer [local-storage]]
     [reagent.core            :as    reagent]))

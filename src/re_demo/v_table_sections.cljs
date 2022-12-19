@@ -1,7 +1,7 @@
 (ns re-demo.v-table-sections
   (:require
-    [re-com-tailwind.core   :refer [at v-box v-table label]]
-    [re-com-tailwind.util    :refer [px]]
+    [re-com.core   :refer [at v-box v-table label]]
+    [re-com.util    :refer [px]]
     [reagent.core  :as reagent]))
 
 

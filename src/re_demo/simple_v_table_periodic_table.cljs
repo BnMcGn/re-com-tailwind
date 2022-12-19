@@ -1,10 +1,10 @@
 (ns re-demo.simple-v-table-periodic-table
   (:require
     [reagent.core          :as reagent]
-    [re-com-tailwind.text           :refer [p]]
-    [re-com-tailwind.box            :refer [v-box]]
-    [re-com-tailwind.popover        :refer [popover-anchor-wrapper popover-content-wrapper]]
-    [re-com-tailwind.simple-v-table :refer [simple-v-table]]
+    [re-com.text           :refer [p]]
+    [re-com.box            :refer [v-box]]
+    [re-com.popover        :refer [popover-anchor-wrapper popover-content-wrapper]]
+    [re-com.simple-v-table :refer [simple-v-table]]
     [re-demo.utils         :refer [title3]]))
 
 (def elements

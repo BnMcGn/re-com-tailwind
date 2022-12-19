@@ -1,8 +1,8 @@
 (ns re-demo.md-circle-icon-button
-  (:require [re-com-tailwind.core    :refer [at h-box v-box box gap line label md-circle-icon-button horizontal-bar-tabs vertical-bar-tabs p p-span]]
-            [re-com-tailwind.buttons :refer [md-circle-icon-button-parts-desc md-circle-icon-button-args-desc]]
+  (:require [re-com.core    :refer [at h-box v-box box gap line label md-circle-icon-button horizontal-bar-tabs vertical-bar-tabs p p-span]]
+            [re-com.buttons :refer [md-circle-icon-button-parts-desc md-circle-icon-button-args-desc]]
             [re-demo.utils  :refer [panel-title title2 title3 parts-table args-table material-design-hyperlink github-hyperlink status-text]]
-            [re-com-tailwind.util    :refer [px]]
+            [re-com.util    :refer [px]]
             [reagent.core   :as    reagent]))
 
 

@@ -1,8 +1,8 @@
 (ns re-demo.label
-  (:require [re-com-tailwind.core   :refer [at h-box v-box box gap line label p]]
-            [re-com-tailwind.text   :refer [label-parts-desc label-args-desc]]
+  (:require [re-com.core   :refer [at h-box v-box box gap line label p]]
+            [re-com.text   :refer [label-parts-desc label-args-desc]]
             [re-demo.utils :refer [panel-title title2 title3 parts-table args-table github-hyperlink status-text]]
-            [re-com-tailwind.util   :refer [px]]))
+            [re-com.util   :refer [px]]))
 
 (defn label-demo
   []

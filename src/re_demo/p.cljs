@@ -1,5 +1,5 @@
 (ns re-demo.p
-  (:require [re-com-tailwind.core   :refer [at h-box v-box box gap line label p p-span hyperlink-href]]
+  (:require [re-com.core   :refer [at h-box v-box box gap line label p p-span hyperlink-href]]
             [re-demo.utils :refer [panel-title title2 args-table github-hyperlink status-text ]]))
 
 

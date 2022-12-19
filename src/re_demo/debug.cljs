@@ -1,9 +1,9 @@
 (ns re-demo.debug
   (:require-macros
-    [re-com-tailwind.core       :refer []])
+    [re-com.core       :refer []])
   (:require
-    [re-com-tailwind.core       :refer [at h-box v-box box gap line title checkbox p]]
-    [re-com-tailwind.datepicker :refer [datepicker]]
+    [re-com.core       :refer [at h-box v-box box gap line title checkbox p]]
+    [re-com.datepicker :refer [datepicker]]
     [reagent.core      :as    reagent]
     [re-demo.utils     :refer [panel-title title2 title3 github-hyperlink]]))
 
@@ -100,7 +100,7 @@
                "[button\n  :src   (at)         ;; <-- note\n  :label \"click me\"\n  ...]"]
               [p "To use it, your " [:code "ns"] " will need to  " [:code ":require"] " it as follows:"]
               [:pre
-               "(ns my.app\n  (:require\n    [re-com-tailwind.core :refer [at h-box v-box ...]])) ;; <-- note 'at'"]
+               "(ns my.app\n  (:require\n    [re-com.core :refer [at h-box v-box ...]])) ;; <-- note 'at'"]
               [p "But wait, you get more. "]
               [p "When " [:code ":src"] " is provided, re-com will add a \"data\" attribute to the DOM "
                "node representing a component. This attribute, called " [:code "data-rc-src"] ",  will contain any source code coordinates provided. "]
@@ -132,7 +132,7 @@
                  and it will dump a detailed component stack report to DevTools console."]
               [p "Use it like this:"]
               [:pre
-               "(ns my.app\n  (:require\n    [re-com-tailwind.core :refer [stack-spy]])"
+               "(ns my.app\n  (:require\n    [re-com.core :refer [stack-spy]])"
                "\n\n"
                "[stack-spy\n  :component [simple-v-table ...]]"]]])
 

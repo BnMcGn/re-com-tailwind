@@ -1,8 +1,8 @@
 (ns re-demo.splits
-  (:require [re-com-tailwind.core   :refer [at h-box v-box box gap line scroller border h-split v-split title flex-child-style p]]
-            [re-com-tailwind.splits :refer [hv-split-parts-desc hv-split-args-desc]]
+  (:require [re-com.core   :refer [at h-box v-box box gap line scroller border h-split v-split title flex-child-style p]]
+            [re-com.splits :refer [hv-split-parts-desc hv-split-args-desc]]
             [re-demo.utils :refer [panel-title title2 title3 parts-table args-table github-hyperlink status-text]]
-            [re-com-tailwind.util   :refer [px]]))
+            [re-com.util   :refer [px]]))
 
 
 (def rounded-panel (merge (flex-child-style "1")

@@ -1,12 +1,12 @@
 (ns re-demo.alert-box
   (:require-macros
     [reagent.debug :refer [dbg prn println log dev? warn warn-unless]]
-    [re-com-tailwind.core   :refer []])
+    [re-com.core   :refer []])
   (:require
-    [re-com-tailwind.core   :refer [at h-box v-box box line gap title label alert-box alert-list p]]
-    [re-com-tailwind.alert  :refer [alert-box-parts-desc alert-box-args-desc alert-list-args-desc]]
+    [re-com.core   :refer [at h-box v-box box line gap title label alert-box alert-list p]]
+    [re-com.alert  :refer [alert-box-parts-desc alert-box-args-desc alert-list-args-desc]]
     [re-demo.utils :refer [panel-title title2 title3 parts-table args-table github-hyperlink status-text]]
-    [re-com-tailwind.util   :refer [px]]
+    [re-com.util   :refer [px]]
     [reagent.core  :as    reagent]))
 
 (defn alert-box-demo

@@ -1,10 +1,10 @@
 (ns re-demo.alert-list
   (:require-macros
-    [re-com-tailwind.core   :refer []])
+    [re-com.core   :refer []])
   (:require
-    [re-com-tailwind.core   :refer [at h-box v-box box line gap label title button alert-box alert-list p]]
-    [re-com-tailwind.alert  :refer [alert-list-parts-desc alert-box-args-desc alert-list-args-desc]]
-    [re-com-tailwind.util   :refer [insert-nth remove-id-item px]]
+    [re-com.core   :refer [at h-box v-box box line gap label title button alert-box alert-list p]]
+    [re-com.alert  :refer [alert-list-parts-desc alert-box-args-desc alert-list-args-desc]]
+    [re-com.util   :refer [insert-nth remove-id-item px]]
     [re-demo.utils :refer [panel-title title2 title3 parts-table args-table github-hyperlink status-text]]
     [reagent.core  :as    reagent]))
 

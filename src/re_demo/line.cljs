@@ -1,6 +1,6 @@
 (ns re-demo.line
-  (:require [re-com-tailwind.core   :refer [at h-box v-box box gap line p]]
-            [re-com-tailwind.box    :refer [line-args-desc]]
+  (:require [re-com.core   :refer [at h-box v-box box gap line p]]
+            [re-com.box    :refer [line-args-desc]]
             [re-demo.utils :refer [panel-title title2 args-table github-hyperlink status-text]]))
 
 

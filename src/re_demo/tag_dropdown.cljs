@@ -2,11 +2,11 @@
   (:require [cljs.pprint          :as pprint]
             [clojure.string       :as string]
             [reagent.core         :as reagent]
-            [re-com-tailwind.core          :refer [at h-box box checkbox gap v-box tag-dropdown hyperlink-href p label line]]
-            [re-com-tailwind.slider        :refer [slider]]
-            [re-com-tailwind.tag-dropdown  :refer [tag-dropdown-parts-desc tag-dropdown-args-desc]]
+            [re-com.core          :refer [at h-box box checkbox gap v-box tag-dropdown hyperlink-href p label line]]
+            [re-com.slider        :refer [slider]]
+            [re-com.tag-dropdown  :refer [tag-dropdown-parts-desc tag-dropdown-args-desc]]
             [re-demo.utils        :refer [panel-title title2 title3 parts-table args-table github-hyperlink status-text new-in-version]]
-            [re-com-tailwind.util          :refer [px]]))
+            [re-com.util          :refer [px]]))
 
 (def choices [{:id :bug           :description "Something isn't working"                    :label "bug"           :background-color "#fc2a29"}
               {:id :documentation :description "Improvements or additions to documentation" :label "documentation" :background-color "#0052cc"}
