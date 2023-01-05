@@ -1,6 +1,9 @@
-(ns re-com-tailwind
+(ns re-com-tailwind.css-spec
   (:require
    [re-com-tailwind.functions :refer [flex-child-style flex-flow-style justify-style align-style scroll-style =date calculate-split-flex-style px]]
+   [goog.string :as gstring]
+   [cljs-time.core :as cljs-time]
+   [clojure.string :as string]
 
    [re-com.alert]
    [re-com.box]
@@ -26,9 +29,11 @@
    [re-com.throbber]
    [re-com.tour]
    [re-com.v-table]
-   [re-com.simple-v-table]))
+   [re-com.simple-v-table]
 
-(def re-com.alert/alert-box-css-spec
+   [re-com.util :refer [px-n]]))
+
+(set! re-com.alert/alert-box-css-spec
   {:main {:class (fn [{:keys [alert-type]}]
                    ["rc-alert" "alert" "fade" "in"
                     (case alert-type
@@ -49,7 +54,7 @@
    :body {:class ["rc-alert-body"]}})
 
 
-(def re-com.alert/alert-list-css-spec
+(set! re-com.alert/alert-list-css-spec
   {:wrapper {:class ["rc-alert-list-wrapper"]}
    :main {:class ["rc-alert-list"]}
    :scroller {:class ["rc-alert-list-scroller"]
@@ -59,7 +64,7 @@
 
 (def visualise-flow? false)
 
-(def re-com.box/box-base-css-spec
+(set! re-com.box/box-base-css-spec
   {:main {:class ["display-flex"]
           :style (fn [{:keys [size scroll h-scroll v-scroll width height min-width min-height max-width max-height justify align align-self
                               margin padding border l-border r-border t-border b-border radius bk-color child class style attr]}]
@@ -90,7 +95,7 @@
               {:background-color bk-color}
               (if visualise-flow? {:background-color "lightblue"} {}))))}})
 
-(def re-com.box/gap-css-spec
+(set! re-com.box/gap-css-spec
   {:main {:class ["rc-gap"]
           :style (fn [{:keys [size width height]}]
                    (merge
@@ -100,14 +105,14 @@
                     (when visualise-flow? {:background-color "chocolate"})))}})
 
 
-(def re-com.box/line-css-spec
+(set! re-com.box/line-css-spec
   {:main {:class ["rc-line"]
           :style (fn [{:keys [size color]}]
                    (merge
                     (flex-child-style (str "0 0 " (or size "1px")))
                     {:background-color (or color "lightgray")}))}})
 
-(def re-com.box/h-box-css-spec
+(set! re-com.box/h-box-css-spec
   {:main {:class ["rc-h-box" "display-flex"]
           :style (fn [{:keys [size width height min-width min-height max-width max-height justify align align-self margin padding]
                        :or   {size "none" justify :start align :stretch}}]
@@ -127,7 +132,7 @@
                     (when padding    {:padding    padding})
                     (when visualise-flow? {:background-color "gold"})))}})
 
-(def re-com.box/v-box-css-spec
+(set! re-com.box/v-box-css-spec
   {:main {:class ["rc-v-box" "display-flex"]
           :style (fn [{:keys [size width height min-width min-height max-width max-height justify align align-self margin padding]
                        :or   {size "none" justify :start align :stretch}}]
@@ -147,23 +152,23 @@
                     (when padding     {:padding    padding})
                     (when visualise-flow? {:background-color "antiquewhite"})))}})
 
-(def re-com.box/box-css-spec
+(set! re-com.box/box-css-spec
   {:main {:class ["rc-box"]}})
 
-(def re-com.box/scroller-css-spec
+(set! re-com.box/scroller-css-spec
   {:main {:class ["rc-scroller"]}})
 
 
-(def re-com.box/border-css-spec
+(set! re-com.box/border-css-spec
   {:main {:class ["rc-border"]}})
 
-(def re-com.buttons/button-css-spec
+(set! re-com.buttons/button-css-spec
   {:main {:class ["rc-button" "btn"]
           :style (flex-child-style "none") }
    :wrapper {:class ["rc-button-wrapper" "display-inline-flex"]}
    :tooltip {:class ["rc-button-tooltip"]}})
 
-(def re-com.buttons/md-circle-icon-button-css-spec
+(set! re-com.buttons/md-circle-icon-button-css-spec
   {:main {:class
           (fn [{:keys [size emphasise? disabled?]}]
             ["noselect" "rc-md-circle-icon-button"
@@ -185,7 +190,7 @@
             ["zmdi" "zmdi-hc-fw-rc" md-icon-name "rc-md-circle-icon-button-icon"])}
    })
 
-(def re-com.buttons/md-icon-button-css-spec
+(set! re-com.buttons/md-icon-button-css-spec
   {:main {:class
           (fn [{:keys [size emphasise? disabled?]}]
             ["noselect" "rc-md-icon-button"
@@ -207,7 +212,7 @@
             ["zmdi" "zmdi-hc-fw-rc" md-icon-name "rc-md-icon-button-icon"])}
    })
 
-(def re-com.buttons/info-button-css-spec
+(set! re-com.buttons/info-button-css-spec
   {:main {:class (fn [{:keys [disabled?]}]
                    ["noselect" "rc-info-button" (when disabled? "rc-icon-disabled")])
           :style (fn [{:keys [disabled?]}]
@@ -216,7 +221,7 @@
    :tooltip {:class ["rc-info-button-popover-anchor-wrapper"]}
    :icon {:class ["rc-info-button-icon"]}})
 
-(def re-com.buttons/row-button-css-spec
+(set! re-com.buttons/row-button-css-spec
   {:main {:class (fn [{:keys [disabled? mouse-over-row?]}]
                    ["noselect" "rc-row-button"
                     (when mouse-over-row? "rc-row-mouse-over-row")
@@ -226,7 +231,7 @@
    :icon {:class (fn [{:keys [md-icon-name]}]
                    ["zmdi" "zmdi-hc-fw-rc" md-icon-name "rc-row-button-icon"])}})
 
-(def re-com.buttons/hyperlink-css-spec
+(set! re-com.buttons/hyperlink-css-spec
   {:main {:class ["noselect" "rc-hyperlink"]
           :style (fn [{:keys [disabled?]}]
                    (merge
@@ -240,7 +245,7 @@
    :tooltip {:class ["rc-hyperlink-tooltip"]}
    :container {:class ["rc-hyperlink-container"]}})
 
-(def re-com.buttons/hyperlink-href-css-spec
+(set! re-com.buttons/hyperlink-href-css-spec
   {:main {:class ["rc-hyperlink-href" "noselect"]
           :style (fn [{:keys [disabled?]}]
                    (merge
@@ -254,7 +259,7 @@
    :tooltip {:class ["rc-hyperlink-href-tooltip"]}})
 
 
-(def re-com.checkbox/checkbox-css-spec
+(set! re-com.checkbox/checkbox-css-spec
   {:wrapper {:class ["rc-checkbox-wrapper" "noselect"]}
    :main {:class ["rc-checkbox"]
           :style (merge (flex-child-style "none")
@@ -265,7 +270,7 @@
                           :cursor "default"})}})
 
 
-(def re-com.close-button/close-button-css-spec
+(set! re-com.close-button/close-button-css-spec
   {:wrapper {:class ["rc-close-button"]
              :style (fn [{:keys [div-size disabled?]}]
                       (merge
@@ -296,7 +301,7 @@
 
 
 
-(def re-com.datepicker/datepicker-css-spec
+(set! re-com.datepicker/datepicker-css-spec
   {:main {:class ["datepicker" "noselect" "rc-datepicker"]
           :style {:font-size "13px"
                   :position "static"}}
@@ -355,7 +360,7 @@
                            ["rc-datepicker-today"]
                            :else []))))}})
 
-(def re-com.dropdown/single-dropdown-css-spec
+(set! re-com.dropdown/single-dropdown-css-spec
   {:main {:class (fn [{:keys [free-text? drop-showing? free-text-focused?]}]
                    ["rc-dropdown" "chosen-container" "noselect"
                     (if free-text? "chosen-container-multi" "chosen-container-single")
@@ -405,7 +410,7 @@
 
 
 
-(def re-com.input-text/input-text-css-spec
+(set! re-com.input-text/input-text-css-spec
   {:main {:class ["form-control" "rc-input-text-field"]
           :style (fn [{:keys [height]}]
                    (merge
@@ -457,7 +462,7 @@
                            :opacity "1"}}})
 
 
-(def re-com.input-time/input-time-css-spec
+(set! re-com.input-time/input-time-css-spec
   {:wrapper {:class ["rc-input-time"]}
    ;; Leaving time-entry class (below) for backwards compatibility only.
    :main {:class ["rc-time-entry" "time-entry"]
@@ -469,7 +474,7 @@
                        :margin "auto"}}})
 
 
-(def re-com.modal-panel/modal-panel-css-spec
+(set! re-com.modal-panel/modal-panel-css-spec
   {:main {:class ["rc-modal-panel" "display-flex"]
           :style {:position "fixed"
                   :left     "0px"
@@ -496,11 +501,11 @@
                                   :border-radius "6px"})))}})
 
 
-(def re-com.multi-select/multi-select-css-spec
+(set! re-com.multi-select/multi-select-css-spec
   {:main {:class ["rc-multi-select" "noselect" "chosen-container" "chosen-container-single"]
           :style (fn [{:keys [width]}]
-                   (merge (box/flex-child-style (if width "0 0 auto" "auto"))
-                          (box/align-style :align-self :start)
+                   (merge (flex-child-style (if width "0 0 auto" "auto"))
+                          (align-style :align-self :start)
                           {:overflow "hidden"
                            :width width}))}
    :container {:class ["rc-multi-select-container"]}
@@ -594,7 +599,7 @@
    :list-box-no-results {:class ["no-results"]}})
 
 
-(def re-com.popover/popover-arrow-css-spec
+(set! re-com.popover/popover-arrow-css-spec
   {:arrow {:class ["popover-arrow" "rc-popover-arrow"]
           :style (fn [{:keys [orientation pop-offset arrow-length arrow-width]}]
                    {:position "absolute"
@@ -628,7 +633,7 @@
                       :stroke-width "1"})}})
 
 
-(def re-com.popover/backdrop-css-spec
+(set! re-com.popover/backdrop-css-spec
   {:main {:class ["noselect" "rc-backdrop"]
           :style (fn [{:keys [opacity]}]
                    {:position         "fixed"
@@ -640,7 +645,7 @@
                     :opacity          (or opacity 0.0)})}})
 
 
-(def re-com.popover/popover-title-css-spec
+(set! re-com.popover/popover-title-css-spec
   {:main {:class ["popover-title" "rc-popover-title"]
           :style (merge (flex-child-style "inherit")
                         {:font-size "18px"})}
@@ -648,7 +653,7 @@
    :close-button {}})
 
 
-(def re-com.popover/popover-border-css-spec
+(set! re-com.popover/popover-border-css-spec
   {:main {:class ["popover" "fade" "in" "rc-popover-border"]
           :style (fn [{:keys [top left width height background-color border-color tooltip-style?
                               orientation margin-left margin-top ready-to-show?] :as params}]
@@ -683,7 +688,7 @@
                       {:padding padding})}})
 
 
-(def re-com.popover/popover-content-wrapper-css-spec
+(set! re-com.popover/popover-content-wrapper-css-spec
   {:main {:class ["popover-content-wrapper" "rc-popover-content-wrapper"]
           :style (fn [{:keys [no-clip? left-offset top-offset]}]
                    (merge (flex-child-style "inherit")
@@ -696,7 +701,7 @@
    :title {}})
 
 
-(def re-com.popover/popover-anchor-wrapper-css-spec
+(set! re-com.popover/popover-anchor-wrapper-css-spec
   {:main {:class ["rc-popover-anchor-wrapper" "display-inline-flex"]
           :style (flex-child-style "inherit")}
    :point-wrapper {:class ["display-inline-flex" "rc-point-wrapper"]
@@ -710,7 +715,7 @@
                    {:position "relative"
                     :z-index 4})}})
 
-(def re-com.popover/popover-tooltip-css-spec
+(set! re-com.popover/popover-tooltip-css-spec
   {:main {:class ["rc-popover-tooltip"]}
    :content-wrapper {}
    :v-box {:style (fn [{:keys [status]}]
@@ -726,7 +731,7 @@
    :close-button {:class ["rc-popover-tooltip-close-button"]}})
 
 
-(def re-com.progress-bar/progress-bar-css-spec
+(set! re-com.progress-bar/progress-bar-css-spec
   {:wrapper {:class ["rc-progress-bar-wrapper"]}
    :main {:class ["rc-progress-bar" "progress"]
           :style (fn [{:keys [width]}]
@@ -740,7 +745,7 @@
                        :transition "none"})}}) ;; Default BS transitions cause the progress bar to lag behind
 
 
-(def re-com.radio-button/radio-button-css-spec
+(set! re-com.radio-button/radio-button-css-spec
   {:main {:class ["rc-radio-button"]
           :style (merge
                   (flex-child-style "none")
@@ -773,7 +778,7 @@
    :margin-bottom  "0px"})
 
 
-(def re-com.selection-list/selection-list-css-spec
+(set! re-com.selection-list/selection-list-css-spec
   {:main {:class (fn [{:keys [disabled?]}]
                    ["rc-selection-list" (when disabled? "rc-disabled")])}
    :list-group {:class ["rc-selection-list-group" "list-group" "noselect"]
@@ -789,7 +794,7 @@
                            (when disabled? {:pointer-events "none"}))}})
 
 
-(def re-com.simple-v-table/simple-v-table-css-spec
+(set! re-com.simple-v-table/simple-v-table-css-spec
   {:simple-wrapper {:class ["rc-simple-v-table-wrapper"]
                     :style (fn [{:keys [max-rows padding max-width table-row-line-color]}]
                              {;; :flex setting
@@ -849,7 +854,7 @@
                                        (cell-style row column)
                                        cell-style)))}})
 
-(def re-com.slider/slider-css-spec
+(set! re-com.slider/slider-css-spec
   {:main {:class ["rc-slider"]
           :style (fn [{:keys [width disabled?]}]
                    (merge
@@ -860,19 +865,7 @@
                      :cursor (if disabled? "default" "pointer")}))}
    :wrapper {:class ["rc-slider-wrapper"]}})
 
-
-
-
-(defn calculate-split-flex-style [value is-px?]
-  (if is-px?
-    (if (pos? value)
-      (str "0 0 " value "px") ;; flex for panel-1
-      (str "1 1 0px")) ;; flex for panel-2
-    (str value " 1 0px")))
-
-
-
-(def re-com.splits/hv-split-css-spec
+(set! re-com.splits/hv-split-css-spec
   {:main {:class (fn [{:keys [vertical?]}]
                    [(if vertical? "rc-v-split" "rc-h-split") "display-flex"])
           :style (fn [{:keys [size margin width height vertical?]}]
@@ -929,7 +922,7 @@
 
 
 
-(def re-com.tabs/horizontal-tabs-css-spec
+(set! re-com.tabs/horizontal-tabs-css-spec
   {:wrapper {:class ["nav" "nav-tabs" "noselect" "rc-tabs"]
              :style (flex-child-style "none")
              :use-toplevel true}
@@ -939,7 +932,7 @@
             :style {:cursor "pointer"}}})
 
 
-(def re-com.tabs/bar-tabs-css-spec
+(set! re-com.tabs/bar-tabs-css-spec
   {:wrapper {:class (fn [{:keys [vertical?]}]
                       ["noselect" (if vertical? "btn-group-vertical" "btn-group") "rc-tabs"])
              :style (flex-child-style "none")}
@@ -947,7 +940,7 @@
    :button {:class (fn [{:keys [selected?]}]
                      ["btn" "btn-default" (when selected? "active") "rc-tabs-btn"])}})
 
-(def re-com.tabs/pill-tabs-css-spec
+(set! re-com.tabs/pill-tabs-css-spec
   {:wrapper {:class (fn [{:keys [vertical?]}]
                       ["rc-tabs" "noselect" "nav" "nav-pills" (when vertical? "nav-stacked")])
              :style (flex-child-style "none")}
@@ -958,7 +951,7 @@
 
 
 
-(def re-com.tag-dropdown/tag-dropdown-css-spec
+(set! re-com.tag-dropdown/tag-dropdown-css-spec
   {:main {:class ["rc-tag-dropdown"]
           :style (fn [{:keys [disabled?]}]
                    {:background-color (if disabled? "#EEE" "white")
@@ -992,13 +985,14 @@
    :popover-anchor-wrapper {:class ["rc-tag-dropdown-popover-anchor-wrapper"]}})
 
 
-(def re-com.text/label-css-spec
+(set! re-com.text/label-css-spec
   {:main {:class ["rc-label"]
           :style (flex-child-style "none")}
    :wrapper {:class ["rc-label-wrapper" "display-inline-flex"]}})
 
+(println "HEEEEEEEREEEEE!!!!!")
 
-(def re-com.text/title-css-spec
+(set! re-com.text/title-css-spec
   {:wrapper {:class (fn [{:keys [level]}]
                       ["rc-title-wrapper" (when level (name level))])}
    :main {:class (fn [{:keys [level]}]
@@ -1008,6 +1002,7 @@
                     (flex-child-style "none")
                     {:margin-top (or margin-top "0.6em")
                      :margin-bottom (when-not underline? (or margin-bottom "0.3em"))
+                     :background-color "green"
                      ;; so that the margins are correct
                      :line-height 1}))}
    :underline {:class ["rc-title-underline"]
@@ -1015,14 +1010,14 @@
                         {:margin-bottom (or margin-bottom "0.3em")})}})
 
 
-(def re-com.text/p-css-spec
+(set! re-com.text/p-css-spec
   {:main {:class ["rc-p"]
           :style {:flex          "none"
                   :width         "450px"
                   :min-width     "450px"
                   :margin-bottom "0.7em"}}})
 
-(def re-com.throbber/throbber-css-spec
+(set! re-com.throbber/throbber-css-spec
   {:wrapper {:class ["rc-throbber-wrapper"]}
    :main {:class (fn [{:keys [size]}]
                    ["loader" "rc-throbber"
@@ -1036,7 +1031,7 @@
              :style (fn [{:keys [color]}]
                       (when color {:background-color color}))}})
 
-(def re-com.tour/tour-css-spec
+(set! re-com.tour/tour-css-spec
   {:line {:style (merge (flex-child-style "none")
                         {:margin "10px 0px 10px"})}
    :prev-button {:class ["btn-default" "rc-tour-btn-previous"]
@@ -1044,7 +1039,7 @@
    :next-button {:class (fn [{:keys [last-button?]}]
                           ["btn-default" (if last-button? "rc-tour-btn-finish" "rc-tour-btn-next")])}})
 
-(def re-com.typeahead/typeahead-css-spec
+(set! re-com.typeahead/typeahead-css-spec
   {:main {:class ["rc-typeahead"]}
    :wrapper {}
    :suggestions-container-wrapper {:style {:position "relative"}}
@@ -1053,10 +1048,7 @@
    :suggestion {:class (fn [{:keys [selected?]}]
                          ["rc-typeahead-suggestion" (when selected? "active")])}})
 
-
-(def px (memoize util/px))
-
-(def re-com.v-table/scrollbar-css-spec
+(set! re-com.v-table/scrollbar-css-spec
   {:main {:class (fn [{:keys [horizontal?]}]
                    [(str (if horizontal? "horizontal" "vertical") "-scrollbar")])
           :style (fn [{:keys [width horizontal? show? mouse-over? dragging?]}]
@@ -1080,7 +1072,7 @@
                      (px scroll-position)})}})
 
 
-(def re-com.v-table/v-table-css-spec
+(set! re-com.v-table/v-table-css-spec
   {:wrapper {:class ["rc-v-table"]
              :style (fn [{:keys [max-width max-height]}]
                       {:max-width max-width :max-height max-height})
@@ -1153,7 +1145,7 @@
 ;;This is for the selection-renderer component embedded in v-table. Perhaps it should be a key in
 ;; v-table-css-spec, above. But it doesn't seem to be addressable using `parts` so for now just has
 ;; its defaults defined in the separate structure below.
-(def re-com.v-table/v-table-selection-css-spec
+(set! re-com.v-table/v-table-selection-css-spec
   {:main {:class ["rc-v-table-selection"]
           :style (fn [{:keys [top left width height]}]
                    {:top (px top) :left (px left) :width (px width) :height (px height)

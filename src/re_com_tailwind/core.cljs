@@ -27,7 +27,8 @@
     [re-com.throbber       :as throbber]
     [re-com.tour           :as tour]
     [re-com.v-table        :as v-table]
-    [re-com.simple-v-table :as simple-v-table]))
+    [re-com.simple-v-table :as simple-v-table]
+    [re-com-tailwind.css-spec]))
 
 ;; -----------------------------------------------------------------------------
 ;; re-com public API (see also re-com.util)

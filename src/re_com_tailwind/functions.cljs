@@ -1,7 +1,9 @@
-(ns re-com-tailwind
+(ns re-com-tailwind.functions
   (:require
    [cljs-time.core :as cljs-time]
-   [re-com.util :as util])
+   [clojure.string :as string]
+
+   [re-com.util :as util]))
 
 
 (def visualise-flow? false)
