@@ -1,0 +1,32 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+
+    body {
+        @apply text-left;
+        @apply m-0;
+        @apply bg-white;
+        @apply text-gray-800;
+    }
+    h2 {
+        @apply text-2xl;
+        @apply font-bold;
+        margin-block-start: 0.83rem;
+        margin-block-end: 0.83rem;
+        margin-inline-start: 0px;
+        margin-inline-end: 0px;
+
+    }
+    h3 {
+        @apply font-bold;
+    }
+    h4 {
+        @apply text-base;
+        @apply font-bold;
+        @apply italic;
+        @apply ml-2
+    }}
+
+

@@ -551,7 +551,6 @@
                      :style (fn [{:keys [warning-message]}]
                               (when warning-message
                                 {:color            "white"
-                                 :background-color "green"
                                  :border-radius    "0px"
                                  :opacity            "0"
                                  :position           "absolute"

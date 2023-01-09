@@ -22,7 +22,8 @@
                  [lein-shadow             "0.4.0"]
                  [com.github.liquidz/antq "RELEASE"]
                  [lein-shell              "0.5.0"]
-                 [lein-pprint             "1.3.2"]]
+                 [lein-pprint             "1.3.2"]
+                 [lein-tailwind           "0.1.2"]]
 
 
   :middleware   [leiningen.git-inject/middleware]
@@ -138,6 +139,12 @@
                               ["shell" "karma" "start" "--single-run" "--reporters" "junit,dots"]]
                              ["with-profile" "+demo,-dev" "do"
                               ["clean"]
-                              ["shadow" "release" "demo"]]]})
+                              ["shadow" "release" "demo"]]]}
+
+  :tailwind {:tailwind-dir "."
+             :output-dir   "run/resources/public/assets/css"
+             :tailwind-config  "tailwind.config.js" ;; tailwind.config.js is the default value
+             :styles [{:src "demo.src.css"
+                       :dst "demo.css"}]})
 
 
