@@ -58,8 +58,7 @@
                           (str grow " " shrink " " basis)
                           size)]
     {:-webkit-flex flex
-             :flex flex}))
-
+     :flex flex}))
 
 (defn flex-flow-style
   "A cross-browser helper function to output flex-flow with all it's potential browser prefixes"
@@ -149,4 +148,15 @@
 (def px (memoize util/px))
 
 
+
+(defn tw-alert [type & appendages]
+  (reduce
+   into
+   (case type
+     :none []
+     :info ["border" "p-4" "mb-5" "rounded" "bg-lime-100" "border-lime-400" "text-lime-700"]
+     :warning ["border" "p-4" "mb-5" "rounded" "bg-amber-100" "border-amber-400" "text-orange-600"]
+     :danger ["border" "p-4" "mb-5" "rounded" "bg-red-100" "border-red-400" "text-red-700"]
+     nil [])
+   appendages))
 

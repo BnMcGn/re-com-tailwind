@@ -1,6 +1,8 @@
 (ns re-com-tailwind.css-spec
   (:require
-   [re-com-tailwind.functions :refer [flex-child-style flex-flow-style justify-style align-style scroll-style =date calculate-split-flex-style px]]
+   [re-com-tailwind.functions :refer
+    [flex-child-style flex-flow-style justify-style align-style scroll-style =date calculate-split-flex-style px
+     tw-alert]]
    [goog.string :as gstring]
    [cljs-time.core :as cljs-time]
    [clojure.string :as string]
@@ -35,13 +37,7 @@
 
 (set! re-com.alert/alert-box-css-spec
   {:main {:class (fn [{:keys [alert-type]}]
-                   ["rc-alert" "alert" "fade" "in"
-                    (case alert-type
-                      :none          nil
-                      :info           "alert-success"
-                      :warning        "alert-warning"
-                      :danger         "alert-danger"
-                      nil)])
+                   (tw-alert alert-type ["rc-alert" "fade" "in"]))
           :style (fn [{:keys [padding]}]
                    (merge (flex-child-style "none")
                           {:padding padding}))}
@@ -989,8 +985,6 @@
           :style (flex-child-style "none")}
    :wrapper {:class ["rc-label-wrapper" "display-inline-flex"]}})
 
-(println "HEEEEEEEREEEEE!!!!!")
-
 (set! re-com.text/title-css-spec
   {:wrapper {:class (fn [{:keys [level]}]
                       ["rc-title-wrapper" (when level (name level))])}
@@ -1001,7 +995,6 @@
                     (flex-child-style "none")
                     {:margin-top (or margin-top "0.6em")
                      :margin-bottom (when-not underline? (or margin-bottom "0.3em"))
-                     :background-color "green"
                      ;; so that the margins are correct
                      :line-height 1}))}
    :underline {:class ["rc-title-underline"]
