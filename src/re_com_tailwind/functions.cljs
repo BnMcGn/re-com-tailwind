@@ -147,7 +147,7 @@
 
 (def px (memoize util/px))
 
-
+;;; Tools to help replace the functionality of bootstrap classes
 
 (defn tw-alert [type & appendages]
   (reduce
@@ -158,5 +158,130 @@
      :warning ["border" "p-4" "mb-5" "rounded" "bg-amber-100" "border-amber-400" "text-orange-600"]
      :danger ["border" "p-4" "mb-5" "rounded" "bg-red-100" "border-red-400" "text-red-700"]
      nil [])
+   appendages))
+
+(defn tw-fade-in [& appendages]
+  (reduce
+   into
+   ["transition-[opacity_0.15s_linear_0s]"]
+   appendages))
+
+(defn tw-btn [& appendages]
+  (reduce
+   into
+   ["inline-block" "py-1" "px-3" "text-center" "whitespace-nowrap" "align-middle"
+    "text-sm" "font-normal" "whitespace-nowrap" "bg-none" "rounded" "border" "border-solid"
+    "cursor-pointer" "select-none" "lineHeight-snug"]
+   appendages))
+
+(defn tw-btn-danger [& appendages]
+  (reduce
+   into
+   ["border-red-500" "bg-red-500" "text-white"
+    "focus:border-red-900" "focus:bg-red-600" "hover:border-red-700" "hover:bg-red-600"
+    "active:focus:bg-red-700" "active:focus:border-red-900"
+    "active:hover:bg-red-700" "active:hover:border-red-900"]
+   appendages))
+
+(defn tw-btn-danger-disabled [& appendages]
+  (reduce
+   into
+   ["border-red-500" "bg-red-500" "text-white"
+    "focus:border-red-500" "focus:bg-red-500" "hover:border-red-500" "hover:bg-red-500"
+    "active:focus:bg-red-500" "active:focus:border-red-500"
+    "active:hover:bg-red-500" "active:hover:border-red-500"]
+   appendages))
+
+(defn tw-btn-default [& appendages]
+  (reduce
+   into
+   ["border-stone-300" "bg-white" "text-zinc-800"
+    "focus:border-neutral-400" "focus:bg-neutral-200" "hover:border-zinc-400" "hover:bg-neutral-200"
+    "active:focus:bg-zinc-400" "active:focus:border-neutral-400"
+    "active:hover:bg-zinc-400" "active:hover:border-neutral-400"]
+   appendages))
+
+(defn tw-btn-default-disabled [& appendages]
+  (reduce
+   into
+   ["border-stone-300" "bg-white" "text-zinc-800"
+    "focus:border-stone-300" "focus:bg-white" "hover:border-stone-300" "hover:bg-white"
+    "active:focus:bg-white" "active:focus:border-stone-300"
+    "active:hover:bg-white" "active:hover:border-stone-300"]
+   appendages))
+
+(defn tw-btn-info [& appendages]
+  (reduce
+   into
+   ["border-sky-400" "bg-blue-400" "text-white"
+    "focus:border-cyan-700" "focus:bg-sky-400" "hover:border-cyan-600" "hover:bg-sky-400"
+    "active:focus:bg-cyan-600" "active:focus:border-cyan-800"
+    "active:hover:bg-cyan-600" "active:hover:border-cyan-800"]
+   appendages))
+
+(defn tw-btn-info-disabled [& appendages]
+  (reduce
+   into
+   ["border-sky-400" "bg-blue-400" "text-white"
+    "focus:border-sky-400" "focus:bg-blue-400" "hover:border-sky-400" "hover:bg-blue-400"
+    "active:focus:bg-blue-400" "active:focus:border-sky-400"
+    "active:hover:bg-blue-400" "active:hover:border-sky-400"]
+   appendages))
+
+(defn tw-btn-success [& appendages]
+  (reduce
+   into
+   ["border-green-500" "bg-green-400" "text-white"
+    "focus:border-green-900" "focus:bg-green-600" "hover:border-green-700" "hover:bg-green-600"
+    "active:focus:bg-green-700" "active:focus:border-green-900"
+    "active:hover:bg-green-700" "active:hover:border-green-900"]
+   appendages))
+
+(defn tw-btn-success-disabled [& appendages]
+  (reduce
+   into
+   ["border-green-500" "bg-green-400" "text-white"
+    "focus:border-green-500" "focus:bg-green-400" "hover:border-green-500" "hover:bg-green-400"
+    "active:focus:bg-green-400" "active:focus:border-green-500"
+    "active:hover:bg-green-400" "active:hover:border-green-500"]
+   appendages))
+
+(defn tw-btn-primary [& appendages]
+  (reduce
+   into
+   ["border-cyan-700" "bg-cyan-600" "text-white"
+    "focus:border-slate-800" "focus:bg-cyan-700" "hover:border-cyan-900" "hover:bg-cyan-700"
+    "active:focus:bg-cyan-900" "active:focus:border-black"
+    "active:hover:bg-cyan-900" "active:hover:border-black"]
+   appendages))
+
+(defn tw-btn-group [& appendages]
+  (reduce
+   into
+   ["relative" "inline-block" "align-middle"]
+   appendages))
+
+(defn tw-btn-group-button [& appendages]
+  (reduce
+   into
+   ["relative" "float-left"
+    "active:zIndex-10" "focus:zIndex-10" "hover:zIndex-10"
+    "rounded-none" "last:rounded-r" "first:rounded-l"
+    "first:ml-0"]
+   appendages))
+
+(defn tw-btn-group-vertical [& appendages]
+  (reduce
+   into
+   ["relative" "inline-block" "align-middle"]
+   appendages))
+
+(defn tw-btn-group-button-vertical [& appendages]
+  (reduce
+   into
+   ["relative" "float-none" "w-full" "max-w-full"
+    "active:zIndex-10" "focus:zIndex-10" "hover:zIndex-10"
+    "rounded-none" "last:rounded-b" "first:rounded-t"
+    "first:ml-0"]
    appendages))
 
