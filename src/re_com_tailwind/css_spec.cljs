@@ -2,7 +2,8 @@
   (:require
    [re-com-tailwind.functions :refer
     [flex-child-style flex-flow-style justify-style align-style scroll-style =date calculate-split-flex-style px
-     tw-alert]]
+     tw-alert tw-btn-group tw-btn-group-button tw-btn-group-vertical tw-btn-group-button-vertical
+     tw-btn tw-btn-base tw-btn-default tw-btn-active]]
    [goog.string :as gstring]
    [cljs-time.core :as cljs-time]
    [clojure.string :as string]
@@ -159,7 +160,7 @@
   {:main {:class ["rc-border"]}})
 
 (set! re-com.buttons/button-css-spec
-  {:main {:class ["rc-button" "btn"]
+      {:main {:class (tw-btn ["rc-button"])
           :style (flex-child-style "none") }
    :wrapper {:class ["rc-button-wrapper" "display-inline-flex"]}
    :tooltip {:class ["rc-button-tooltip"]}})
@@ -915,8 +916,6 @@
                      (merge (flex-child-style flex)
                             (when dragging? {:pointer-events "none"})))}})
 
-
-
 (set! re-com.tabs/horizontal-tabs-css-spec
   {:wrapper {:class ["nav" "nav-tabs" "noselect" "rc-tabs"]
              :style (flex-child-style "none")
@@ -928,12 +927,18 @@
 
 
 (set! re-com.tabs/bar-tabs-css-spec
-  {:wrapper {:class (fn [{:keys [vertical?]}]
-                      ["noselect" (if vertical? "btn-group-vertical" "btn-group") "rc-tabs"])
+      {:wrapper {:class (fn [{:keys [vertical?]}]
+                          ((if vertical? tw-btn-group-vertical tw-btn-group)
+                           ["noselect" "rc-tabs"]))
              :style (flex-child-style "none")}
    :tooltip {:class ["rc-tabs-tooltip"]}
-   :button {:class (fn [{:keys [selected?]}]
-                     ["btn" "btn-default" (when selected? "active") "rc-tabs-btn"])}})
+       :button {:class (fn [{:keys [selected? vertical?]}]
+                         (cond-> ["rc-tabs-btn"]
+                           true tw-btn-base
+                           true tw-btn-default
+                           vertical? tw-btn-group-button-vertical
+                           (not vertical?) tw-btn-group-button
+                           selected? tw-btn-active))}})
 
 (set! re-com.tabs/pill-tabs-css-spec
   {:wrapper {:class (fn [{:keys [vertical?]}]

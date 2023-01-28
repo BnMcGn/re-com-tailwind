@@ -166,12 +166,18 @@
    ["transition-[opacity_0.15s_linear_0s]"]
    appendages))
 
+(defn tw-btn-base [& appendages]
+  (reduce
+   into
+   ["py-1" "px-3" "text-center" "whitespace-nowrap" "align-middle"
+    "text-sm" "font-normal" "whitespace-nowrap" "bg-none" "rounded" "border" "border-solid"
+    "cursor-pointer" "select-none" "lineHeight-snug"]
+   appendages))
+
 (defn tw-btn [& appendages]
   (reduce
    into
-   ["inline-block" "py-1" "px-3" "text-center" "whitespace-nowrap" "align-middle"
-    "text-sm" "font-normal" "whitespace-nowrap" "bg-none" "rounded" "border" "border-solid"
-    "cursor-pointer" "select-none" "lineHeight-snug"]
+   (tw-btn-base ["inline-block"])
    appendages))
 
 (defn tw-btn-danger [& appendages]
@@ -264,8 +270,8 @@
 (defn tw-btn-group-button [& appendages]
   (reduce
    into
-   ["relative" "float-left"
-    "active:zIndex-10" "focus:zIndex-10" "hover:zIndex-10"
+   ["relative" "float-left" "zIndex-10"
+    "active:zIndex-20" "focus:zIndex-20" "hover:zIndex-20"
     "rounded-none" "last:rounded-r" "first:rounded-l"
     "first:ml-0"]
    appendages))
@@ -273,15 +279,21 @@
 (defn tw-btn-group-vertical [& appendages]
   (reduce
    into
-   ["relative" "inline-block" "align-middle"]
+   ["relative" "block" "align-middle"]
    appendages))
 
 (defn tw-btn-group-button-vertical [& appendages]
   (reduce
    into
-   ["relative" "float-none" "w-full" "max-w-full"
-    "active:zIndex-10" "focus:zIndex-10" "hover:zIndex-10"
+   ["relative" "float-none" "w-full" "max-w-full" "zIndex-10" "block"
+    "active:zIndex-20" "focus:zIndex-20" "hover:zIndex-20"
     "rounded-none" "last:rounded-b" "first:rounded-t"
     "first:ml-0"]
+   appendages))
+
+(defn tw-btn-active [& appendages]
+  (reduce
+   into
+   ["shadow-inner"]
    appendages))
 
