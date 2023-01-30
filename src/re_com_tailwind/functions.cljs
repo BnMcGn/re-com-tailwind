@@ -273,7 +273,7 @@
    ["relative" "float-left" "z-0"
     "active:z-20" "focus:z-20" "hover:z-20"
     "rounded-none" "last:rounded-r" "first:rounded-l"
-    "first:ml-0"]
+    "first:ml-0" "ml-[-1px]"]
    appendages))
 
 (defn tw-btn-group-vertical [& appendages]
@@ -288,7 +288,7 @@
    ["relative" "float-none" "w-full" "max-w-full" "z-0" "block"
     "active:z-20" "focus:z-20" "hover:z-20"
     "rounded-none" "last:rounded-b" "first:rounded-t"
-    "first:ml-0"]
+    "first:mt-0" "mt-[-1px]"]
    appendages))
 
 (defn tw-btn-selected [& appendages]
