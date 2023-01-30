@@ -270,8 +270,8 @@
 (defn tw-btn-group-button [& appendages]
   (reduce
    into
-   ["relative" "float-left" "zIndex-10"
-    "active:zIndex-20" "focus:zIndex-20" "hover:zIndex-20"
+   ["relative" "float-left" "z-0"
+    "active:z-20" "focus:z-20" "hover:z-20"
     "rounded-none" "last:rounded-r" "first:rounded-l"
     "first:ml-0"]
    appendages))
@@ -285,15 +285,15 @@
 (defn tw-btn-group-button-vertical [& appendages]
   (reduce
    into
-   ["relative" "float-none" "w-full" "max-w-full" "zIndex-10" "block"
-    "active:zIndex-20" "focus:zIndex-20" "hover:zIndex-20"
+   ["relative" "float-none" "w-full" "max-w-full" "z-0" "block"
+    "active:z-20" "focus:z-20" "hover:z-20"
     "rounded-none" "last:rounded-b" "first:rounded-t"
     "first:ml-0"]
    appendages))
 
-(defn tw-btn-active [& appendages]
+(defn tw-btn-selected [& appendages]
   (reduce
    into
-   ["shadow-inner"]
+   ["shadow-inner" "bg-zinc-200" "border-neutral-400"]
    appendages))
 

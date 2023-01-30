@@ -3,7 +3,7 @@
    [re-com-tailwind.functions :refer
     [flex-child-style flex-flow-style justify-style align-style scroll-style =date calculate-split-flex-style px
      tw-alert tw-btn-group tw-btn-group-button tw-btn-group-vertical tw-btn-group-button-vertical
-     tw-btn tw-btn-base tw-btn-default tw-btn-active]]
+     tw-btn tw-btn-base tw-btn-default tw-btn-selected]]
    [goog.string :as gstring]
    [cljs-time.core :as cljs-time]
    [clojure.string :as string]
@@ -938,7 +938,7 @@
                            true tw-btn-default
                            vertical? tw-btn-group-button-vertical
                            (not vertical?) tw-btn-group-button
-                           selected? tw-btn-active))}})
+                           selected? tw-btn-selected))}})
 
 (set! re-com.tabs/pill-tabs-css-spec
   {:wrapper {:class (fn [{:keys [vertical?]}]
