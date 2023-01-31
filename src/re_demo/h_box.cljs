@@ -6,6 +6,7 @@
     [re-com.core     :refer [at p p-span h-box v-box box gap line scroller border label title button close-button checkbox hyperlink-href slider horizontal-bar-tabs info-button input-text input-textarea popover-anchor-wrapper popover-content-wrapper popover-tooltip]]
     [re-com.box      :refer [h-box-args-desc v-box-args-desc box-args-desc gap-args-desc line-args-desc scroller-args-desc border-args-desc flex-child-style]]
     [re-com.util     :refer [px]]
+    [re-com-tailwind.functions :refer [tw-btn-primary]]
     [re-demo.utils   :refer [panel-title title2 args-table github-hyperlink status-text]]
     [re-com.validate :refer [string-or-hiccup? alert-type? vector-of-maps?]]
     [reagent.core    :as    reagent]
@@ -50,7 +51,7 @@
                      :children [[button
                                  :src      (at)
                                  :label    "Blue"
-                                 :class    "btn-primary"
+                                 :class    (tw-btn-primary)
                                  :on-click #()]
                                 [gap
                                  :src   (at)
