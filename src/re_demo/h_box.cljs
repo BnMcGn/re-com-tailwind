@@ -51,7 +51,7 @@
                      :children [[button
                                  :src      (at)
                                  :label    "Blue"
-                                 :class    (tw-btn-primary)
+                                 :class    (tw-btn-primary ["m-1px"])
                                  :on-click #()]
                                 [gap
                                  :src   (at)
@@ -60,6 +60,7 @@
                                 [button
                                  :src      (at)
                                  :label    "White"
+                                 :class ["bg-white" "m-1px"]
                                  :on-click #()]]])
 
 (def demos [;; Basic

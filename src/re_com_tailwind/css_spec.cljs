@@ -160,7 +160,7 @@
   {:main {:class ["rc-border"]}})
 
 (set! re-com.buttons/button-css-spec
-      {:main {:class (tw-btn ["rc-button" "bg-white"])
+      {:main {:class (tw-btn ["rc-button"])
           :style (flex-child-style "none") }
    :wrapper {:class ["rc-button-wrapper" "display-inline-flex"]}
    :tooltip {:class ["rc-button-tooltip"]}})

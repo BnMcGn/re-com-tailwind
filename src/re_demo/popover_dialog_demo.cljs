@@ -1,6 +1,7 @@
 (ns re-demo.popover-dialog-demo
   (:require [re-com.core  :refer [at h-box v-box box gap line label checkbox radio-button button single-dropdown popover-content-wrapper popover-anchor-wrapper]]
             [re-com.util  :refer [deref-or-value]]
+            [re-com-tailwind.functions :refer [tw-btn tw-btn-primary tw-btn-danger]]
             [reagent.core :as    reagent]))
 
 
@@ -49,7 +50,7 @@
                                       :children [[button :src (at)
                                                   :label    [:span [:i {:class "zmdi zmdi-check" }] " Apply"]
                                                   :on-click #(submit-dialog @dialog-data)
-                                                  :class    "btn-primary"]
+                                                  :class    (tw-btn-primary)]
                                                  [popover-anchor-wrapper :src (at)
                                                   :showing? show-tooltip?
                                                   :position :right-below
@@ -76,7 +77,7 @@
        :anchor   [button :src (at)
                   :label    "Dialog box"
                   :on-click #(reset! showing? true)
-                  :class    "btn btn-danger"]
+                  :class    (tw-btn-danger)]
        :popover  [popover-body dialog-data on-change]])))  ;; v0.10.0 breaking change fix (was [popover-body showing? @position dialog-data on-change])
 
 

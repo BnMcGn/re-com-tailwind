@@ -3,6 +3,7 @@
             [re-com.modal-panel :refer [modal-panel-parts-desc modal-panel-args-desc]]
             [re-demo.utils      :refer [panel-title title2 title3 parts-table args-table github-hyperlink status-text]]
             [re-com.util        :refer [px]]
+            [re-com-tailwind.functions :refer [tw-btn-info tw-btn tw-btn-primary tw-btn-danger]]
             [reagent.core       :as    reagent]))
 
 
@@ -14,7 +15,7 @@
       [v-box :src (at)
        :children [[button :src (at)
                    :label    "Please wait message"
-                   :class    "btn-info"
+                   :class    (tw-btn-info (tw-btn))
                    :on-click (fn []
                                (reset! show? true)
                                (js/setTimeout #(reset! show? false) 3000))]
@@ -32,7 +33,7 @@
       [v-box :src (at)
        :children [[button :src (at)
                    :label    "Progress bar with cancel button"
-                   :class    "btn-info"
+                   :class    (tw-btn-info (tw-btn))
                    :on-click #(reset! show? true)]
                   (when @show?
                     [modal-panel :src (at)
@@ -47,7 +48,7 @@
                                         [h-box :src (at)
                                          :children [[button :src (at)
                                                      :label    "Cancel"
-                                                     :class    "btn-danger"
+                                                     :class    (tw-btn-danger (tw-btn))
                                                      :style    {:margin-right "15px"}
                                                      :on-click #(reset! show? false)]
                                                     [:span "pretend only, click Cancel" [:br] "(or click on backdrop)"]]]]]])]])))
@@ -88,7 +89,7 @@
                         :gap      "12px"
                         :children [[button :src (at)
                                     :label    "Sign in"
-                                    :class    "btn-primary"
+                                    :class    (tw-btn-primary (tw-btn))
                                     :on-click process-ok]
                                    [button :src (at)
                                     :label    "Cancel"
@@ -117,7 +118,7 @@
       [v-box :src (at)
        :children [[button :src (at)
                    :label    "Modal Dialog"
-                   :class    "btn-info"
+                   :class    (tw-btn-info (tw-btn))
                    :on-click #(do
                                (reset! save-form-data @form-data)
                                (reset! show? true))]

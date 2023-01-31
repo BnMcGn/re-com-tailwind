@@ -3,6 +3,7 @@
             [re-com.input-time :refer [input-time-parts-desc input-time-args-desc]]
             [re-demo.utils     :refer [panel-title title2 title3 parts-table args-table github-hyperlink status-text]]
             [re-com.util       :refer [px]]
+            [re-com-tailwind.functions :refer [tw-btn tw-btn-default]]
             [reagent.core      :as    reagent]))
 
 
@@ -82,11 +83,11 @@
                                            :align :center
                                            :children [[button :src (at)
                                                        :label    "11am"
-                                                       :class    "btn btn-default"
+                                                       :class    (tw-btn-default (tw-btn))
                                                        :on-click #(reset! an-int-time 1100)]
                                                       [button :src (at)
                                                        :label    "5pm"
-                                                       :class    "btn btn-default"
+                                                       :class    (tw-btn-default (tw-btn))
                                                        :on-click #(reset! an-int-time 1700)]]]
                                           [gap :src (at) :size "20px"]
                                           [title :src (at) :level :level3 :label "Simulated minimum & maximum changes"]

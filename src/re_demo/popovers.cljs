@@ -4,6 +4,7 @@
             [re-demo.popover-dialog-demo :as    popover-dialog-demo]
             [re-com.util                 :refer [get-element-by-id px]]
             [re-demo.utils               :refer [panel-title title2 title3 parts-table args-table github-hyperlink status-text scroll-to-top]]
+            [re-com-tailwind.functions   :refer [tw-btn-success]]
             [reagent.core                :as    reagent]))
 
 
@@ -291,7 +292,7 @@
                                                                      :anchor   [button :src (at)
                                                                                 :label (if @showing? "pop-down" "click me")
                                                                                 :on-click #(swap! showing? not)
-                                                                                :class "btn-success"]
+                                                                                :class (tw-btn-success)]
                                                                      :popover  [popover-content-wrapper :src (at)
                                                                                 :width            "250px"
                                                                                 :no-clip?         @no-clip?
@@ -483,7 +484,7 @@
                                            :anchor        [button :src (at)
                                                            :label    "click me"
                                                            :on-click #(swap! showing? not)
-                                                           :class    "btn-success"]]]]
+                                                           :class (tw-btn-success)]]]]
                               [v-box :src (at)
                                :children [[gap :src (at) :size "15px"]
                                           [title :src (at) :level :level3 :label "Parameters"]
