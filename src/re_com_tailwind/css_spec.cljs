@@ -3,7 +3,8 @@
    [re-com-tailwind.functions :refer
     [flex-child-style flex-flow-style justify-style align-style scroll-style =date calculate-split-flex-style px
      tw-alert tw-btn-group tw-btn-group-button tw-btn-group-vertical tw-btn-group-button-vertical
-     tw-btn tw-btn-base tw-btn-default tw-btn-selected]]
+     tw-btn tw-btn-base tw-btn-default tw-btn-selected
+     tw-tab tw-tab-active]]
    [goog.string :as gstring]
    [cljs-time.core :as cljs-time]
    [clojure.string :as string]
@@ -917,13 +918,14 @@
                             (when dragging? {:pointer-events "none"})))}})
 
 (set! re-com.tabs/horizontal-tabs-css-spec
-  {:wrapper {:class ["nav" "nav-tabs" "noselect" "rc-tabs"]
-             :style (flex-child-style "none")
-             :use-toplevel true}
-   :tab {:class (fn [{:keys [selected?]}]
-                  ["rc-tab" (when selected? "active")])}
-   :anchor {:class ["rc-tab-anchor"]
-            :style {:cursor "pointer"}}})
+      {:wrapper {:class ["table clear-both flex-none pl-0 my-0 min-w-0 min-h-0 border-b border-solid select-none border-zinc-300" "rc-tabs"]
+                 :style (flex-child-style "none")
+                 :use-toplevel true}
+       :tab {:class ["rc-tab" "block float-left relative -mb-px min-w-0 min-h-0 text-left"]}
+       :anchor {:class (fn [{:keys [selected?]}]
+                         ((if selected? tw-tab-active tw-tab)
+                          ["rc-tab-anchor"]))
+                :style {:cursor "pointer"}}})
 
 
 (set! re-com.tabs/bar-tabs-css-spec
