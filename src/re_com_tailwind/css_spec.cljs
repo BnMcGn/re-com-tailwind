@@ -943,13 +943,21 @@
                            selected? tw-btn-selected))}})
 
 (set! re-com.tabs/pill-tabs-css-spec
-  {:wrapper {:class (fn [{:keys [vertical?]}]
-                      ["rc-tabs" "noselect" "nav" "nav-pills" (when vertical? "nav-stacked")])
-             :style (flex-child-style "none")}
-   :tab {:class (fn [{:keys [selected?]}]
-                  ["rc-tabs-pill" (when selected? "active")])}
-   :anchor {:class ["rc-tabs-anchor"]
-            :style {:cursor "pointer"}}})
+      {:wrapper {:class ["rc-tabs" "table clear-both flex-none pl-0 my-0 min-w-0 min-h-0 select-none"]
+                 :style (flex-child-style "none")}
+       :tab {:class (fn [{:keys [selected? vertical?]}]
+                      (let [spacing (if vertical? "mt-px" "ml-px")]
+                        ["rc-tabs-pill"
+                         "block relative min-w-0 min-h-0 text-left"
+                         (if vertical? "float-none" "float-left")
+                         (when selected? spacing)]))}
+       :anchor {:class (fn [{:keys [selected?]}]
+                         ["rc-tabs-anchor"
+                          "no-underline block relative py-2 px-4 min-w-0 min-h-0 rounded cursor-pointer "
+                          (if selected?
+                            "text-white bg-cyan-600 hover:bg-cyan-600 hover:text-white focus:bg-cyan-600 focus:text-white"
+                            "text-cyan-600 bg-transparent hover:bg-zinc-100 hover:text-cyan-800 focus:bg-zinc-100 focus:text-cyan-800"
+) ])}})
 
 
 
