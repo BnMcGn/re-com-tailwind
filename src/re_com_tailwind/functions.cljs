@@ -171,7 +171,7 @@
    into
    ["py-1" "px-3" "text-center" "whitespace-nowrap" "align-middle"
     "text-sm" "font-normal" "whitespace-nowrap" "bg-none" "rounded" "border" "border-solid"
-    "cursor-pointer" "select-none" "lineHeight-snug"]
+    "cursor-pointer" "select-none" "leading-snug"]
    appendages))
 
 (defn tw-btn [& appendages]
@@ -300,12 +300,13 @@
 (defn tw-tab [& appendages]
   (reduce
    into
-   ["rounded cursor-pointer lineHeight-snug no-underline block relative py-2 px-4 mr-px min-w-0 min-h-0 text-cyan-600 bg-transparent border border-transparent border-solid cursor-pointer hover:border-zinc-100 hover:bg-zinc-100 hover:text-cyan-800 focus:bg-zinc-100 focus:text-cyan-800"]
+   ["rounded cursor-pointer leading-snug no-underline block relative py-2 px-4 mr-px min-w-0 min-h-0 text-cyan-600 bg-transparent border border-transparent border-solid cursor-pointer hover:border-zinc-100 hover:bg-zinc-100 hover:text-cyan-800 focus:bg-zinc-100 focus:text-cyan-800"]
    appendages))
 
 (defn tw-tab-active [& appendages]
   (reduce
    into
-   ["rounded cursor-pointer lineHeight-snug no-underline block relative py-2 px-4 mr-px min-w-0 min-h-0 bg-white border border-solid cursor-pointer border-zinc-300 text-neutral-600 hover:cursor-default hover:border hover:border-solid hover:border-zinc-300 hover:bg-white hover:text-neutral-600 focus:cursor-default focus:border focus:border-solid focus:border-zinc-300 focus:bg-white focus:text-neutral-600 border-b-transparent"]
+   ["rounded cursor-pointer leading-snug no-underline block relative py-2 px-4 mr-px min-w-0 min-h-0 bg-white border border-solid cursor-pointer border-zinc-300 text-neutral-600 hover:cursor-default hover:border hover:border-solid hover:border-zinc-300 hover:bg-white hover:text-neutral-600 focus:cursor-default focus:border focus:border-solid focus:border-zinc-300 focus:bg-white focus:text-neutral-600 border-b-transparent"]
    appendages))
+
 

@@ -4,7 +4,8 @@
     [flex-child-style flex-flow-style justify-style align-style scroll-style =date calculate-split-flex-style px
      tw-alert tw-btn-group tw-btn-group-button tw-btn-group-vertical tw-btn-group-button-vertical
      tw-btn tw-btn-base tw-btn-default tw-btn-selected
-     tw-tab tw-tab-active]]
+     tw-tab tw-tab-active
+     tw-fade-in]]
    [goog.string :as gstring]
    [cljs-time.core :as cljs-time]
    [clojure.string :as string]
@@ -643,7 +644,10 @@
 
 
 (set! re-com.popover/popover-title-css-spec
-  {:main {:class ["popover-title" "rc-popover-title"]
+  {:main {:class ["popover-title" "rc-popover-title"
+                  "py-2 px-3 m-0 min-w-0 min-h-0 text-base border-b border-gray-200 border-solid bg-neutral-100
+
+rounded-t-md"]
           :style (merge (flex-child-style "inherit")
                         {:font-size "18px"})}
    :container {}
@@ -651,7 +655,11 @@
 
 
 (set! re-com.popover/popover-border-css-spec
-  {:main {:class ["popover" "fade" "in" "rc-popover-border"]
+  {:main {:class (tw-fade-in
+                      ["block absolute p-0 w-64 min-w-0 max-w-none min-h-0 font-sans not-italic font-normal normal-case whitespace-normal break-normal bg-clip-padding bg-white rounded-md border border-solid opacity-100 border-stone-300
+
+leading-snug text-base tracking-normal shadow-lg z-50 list-outside no-underline text-left bg-clip-padding drop-shadow-none left-0 top-0 max-w-xs p-px"
+                       "popover" "rc-popover-border"])
           :style (fn [{:keys [top left width height background-color border-color tooltip-style?
                               orientation margin-left margin-top ready-to-show?] :as params}]
                    (merge
@@ -680,7 +688,7 @@
                      :opacity (if ready-to-show? "1" "0")
                      :max-width "none"
                      :padding "0px"}))}
-   :content {:class ["popover-content" "rc-popover-content"]
+   :content {:class ["py-2 px-3" "popover-content" "rc-popover-content"]
              :style (fn [{:keys [padding]}]
                       {:padding padding})}})
 
