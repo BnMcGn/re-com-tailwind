@@ -231,7 +231,7 @@
                    ["zmdi" "zmdi-hc-fw-rc" md-icon-name "rc-row-button-icon"])}})
 
 (set! re-com.buttons/hyperlink-css-spec
-  {:main {:class ["noselect" "rc-hyperlink"]
+  {:main {:class ["noselect" "rc-hyperlink" "underline text-blue-600 hover:text-blue-800"]
           :style (fn [{:keys [disabled?]}]
                    (merge
                     (flex-child-style "none")
@@ -245,7 +245,7 @@
    :container {:class ["rc-hyperlink-container"]}})
 
 (set! re-com.buttons/hyperlink-href-css-spec
-  {:main {:class ["rc-hyperlink-href" "noselect"]
+  {:main {:class ["rc-hyperlink-href" "noselect" "underline text-blue-600 hover:text-blue-800"]
           :style (fn [{:keys [disabled?]}]
                    (merge
                     (flex-child-style "none")
