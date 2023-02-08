@@ -310,3 +310,16 @@
    appendages))
 
 
+(defn tw-form-control [& appendages]
+  (reduce
+   into
+   ["block flex-none py-1 px-3 m-0 w-full min-w-0 h-8 min-h-0 text-sm bg-white bg-none rounded border border-solid cursor-text border-stone-300 text-neutral-600 focus:border-blue-400
+
+leading-snug shadow-sm transition-[border-color_0.15s_ease-in-out_0s] transition-[box-shadow-0.15s-ease-in-out_0s] pr-3.5"]
+   appendages))
+
+(defn tw-form-control-feedback [& appendages]
+  (reduce
+   into
+   ["absolute top-0 right-0 z-20 block w-[34px] h-[34px] leading-[34px] text-center"]
+   appendages))

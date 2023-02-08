@@ -5,7 +5,8 @@
      tw-alert tw-btn-group tw-btn-group-button tw-btn-group-vertical tw-btn-group-button-vertical
      tw-btn tw-btn-base tw-btn-default tw-btn-selected
      tw-tab tw-tab-active
-     tw-fade-in]]
+     tw-fade-in
+     tw-form-control tw-form-control-feedback]]
    [goog.string :as gstring]
    [cljs-time.core :as cljs-time]
    [clojure.string :as string]
@@ -402,7 +403,7 @@
                        :style (fn [{:keys [disabled?]}]
                                 (when disabled?
                                   {:background-color "#eee"}))}
-   :free-text {:class ["form-control"]
+   :free-text {:class (tw-form-control)
                :style (fn [{:keys [width]}]
                         {:width width})}
    :free-text-b-wrapper {:class ["b-wrapper"]}})
@@ -410,7 +411,7 @@
 
 
 (set! re-com.input-text/input-text-css-spec
-  {:main {:class ["form-control" "rc-input-text-field"]
+      {:main {:class (tw-form-control ["rc-input-text-field"])
           :style (fn [{:keys [height]}]
                    (merge
                     (flex-child-style "none")
@@ -432,19 +433,7 @@
                             :margin-left "4px"})}
    :throbber {:class ["smaller"]}
    :tooltip-icon {:class (fn [{:keys [status]}]
-                           ["zmdi" "zmdi-hc-fw"
-                            (case
-                                status
-                              :success "zmdi-check-circle"
-                              :warning "zmdi-alert-triangle"
-                              :error "zmdi-alert-circle zmdi-spinner"
-                              :validating "zmdi-hc-spin zmdi-rotate-right zmdi-spinner"
-                              nil)
-                            "form-control-feedback"])
-                  :style {:position "static"
-                          :height "auto"
-                          :opacity "1"}}
-   :tooltip-icon2 {:class (fn [{:keys [status]}]
+                           (tw-form-control-feedback
                             ["zmdi" "zmdi-hc-fw"
                              (case
                                  status
@@ -452,8 +441,20 @@
                                :warning "zmdi-alert-triangle"
                                :error "zmdi-alert-circle zmdi-spinner"
                                :validating "zmdi-hc-spin zmdi-rotate-right zmdi-spinner"
-                               nil)
-                             "form-control-feedback"])
+                               nil)]))
+                  :style {:position "static"
+                          :height "auto"
+                          :opacity "1"}}
+   :tooltip-icon2 {:class (fn [{:keys [status]}]
+                            (tw-form-control-feedback
+                             ["zmdi" "zmdi-hc-fw"
+                              (case
+                                  status
+                                :success "zmdi-check-circle"
+                                :warning "zmdi-alert-triangle"
+                                :error "zmdi-alert-circle zmdi-spinner"
+                                :validating "zmdi-hc-spin zmdi-rotate-right zmdi-spinner"
+                                nil)]))
                    :style {:position "static"
                            :font-size "130%"
                            :margin-left "4px"
