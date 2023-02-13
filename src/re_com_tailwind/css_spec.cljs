@@ -739,16 +739,24 @@ leading-snug text-base tracking-normal shadow-lg z-50 list-outside no-underline 
 
 (set! re-com.progress-bar/progress-bar-css-spec
   {:wrapper {:class ["rc-progress-bar-wrapper"]}
-   :main {:class ["rc-progress-bar" "progress"]
+   :main {:class ["rc-progress-bar" "progress"
+                  "overflow-hidden flex-none mb-5 w-64 min-w-0 h-5 min-h-0 rounded bg-neutral-100 text-neutral-700
+w-96 shadow-inner"]
           :style (fn [{:keys [width]}]
                    (merge (flex-child-style "none")
                           {:width (or width "100%")}))}
    :portion {:class (fn [{:keys [striped?]}]
                       ["progress-bar" "active" "rc-progress-bar-portion"
-                       (when striped? "progress-bar-striped")])
-             :style (fn [{:keys [percent]}]
+                       "float-left min-w-0 h-full min-h-0 text-xs tracking-normal leading-5 text-center text-white bg-cyan-600
+
+transition-[none_0s_ease_0s] shadow-sm"
+                       (when striped? "animate-stripes")])
+             :style (fn [{:keys [percent striped?]}]
                       {:width (str percent "%")
-                       :transition "none"})}}) ;; Default BS transitions cause the progress bar to lag behind
+                       :transition "none"
+                       :background-image (when striped?
+                                           "linear-gradient(45deg, rgba(255, 255, 255, .15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%, transparent 75%, transparent)")
+                       :background-size "40px 40px"})}}) ;; Default BS transitions cause the progress bar to lag behind
 
 
 (set! re-com.radio-button/radio-button-css-spec

@@ -323,3 +323,4 @@ leading-snug shadow-sm transition-[border-color_0.15s_ease-in-out_0s] transition
    into
    ["absolute top-0 right-0 z-20 block w-[34px] h-[34px] leading-[34px] text-center"]
    appendages))
+
