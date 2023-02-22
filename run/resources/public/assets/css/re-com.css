@@ -1431,3 +1431,32 @@ code {
 .rc-simple-v-table-wrapper .rc-v-table-column-headers:hover svg path {
   fill: #ddd;
 }
+
+
+
+
+
+@-webkit-keyframes stripekey {
+    from {
+        background-position: 40px 0;
+    }
+    to {
+        background-position: 0 0;
+    }
+}
+@-o-keyframes stripekey {
+    from {
+        background-position: 40px 0;
+    }
+    to {
+        background-position: 0 0;
+    }
+}
+@keyframes stripekey {
+    from {
+        background-position: 40px 0;
+    }
+    to {
+        background-position: 0 0;
+    }
+}

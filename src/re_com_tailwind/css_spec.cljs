@@ -750,7 +750,7 @@ w-96 shadow-inner"]
                        "float-left min-w-0 h-full min-h-0 text-xs tracking-normal leading-5 text-center text-white bg-cyan-600
 
 transition-[none_0s_ease_0s] shadow-sm"
-                       (when striped? "animate-stripes")])
+                       (when striped? "animate-[stripekey_2s_linear_infinite]")])
              :style (fn [{:keys [percent striped?]}]
                       {:width (str percent "%")
                        :transition "none"
