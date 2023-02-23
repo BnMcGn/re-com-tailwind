@@ -13,13 +13,13 @@ An extension of the [Re-Com](https://github.com/day8/re-com) UI component librar
 
 ## State of the Project
 
-re-com-tailwind is in its minimally viable infancy. Right now it consists of re-com with the bootstrap dependencies removed. Many of the css values have not been converted to tailwind style classes. There are still dependencies on other css files. CSS Purity has not been attained.
+re-com-tailwind is in its minimally viable infancy. Right now it consists of re-com with the bootstrap dependencies removed. Many of the CSS values have not been converted to tailwind style classes. There are still dependencies on other CSS files. CSS Purity has not been attained.
 
 If you would like to help out, please see the [issues](https://github.com/BnMcGn/re-com-tailwind/issues) page.
 
 ### Limitations
 
-- It's probably a bad idea to use re-com-tailwind and regular re-com components at the same time, because re-com-tailwind tampers with the css structures in re-com.
+- It's probably a bad idea to use re-com-tailwind and regular re-com components at the same time, because re-com-tailwind tampers with the CSS structures in re-com.
 
 
 ## Demo
@@ -42,7 +42,7 @@ re-com-tailwind is available from clojars. Add it to your project.clj dependenci
 
 [![Clojars Project](https://img.shields.io/clojars/v/org.clojars.bnmcgn/re-com-tailwind.svg)](https://clojars.org/org.clojars.bnmcgn/re-com-tailwind)
 
-The re-com-tailwind components are, at this point, components from re-com with custom css settings. However, it is probably best to require them from the `re-com-tailwind.core` namespace, in case of future customization.
+The re-com-tailwind components are, at this point, components from re-com with custom CSS settings. However, it is probably best to require them from the `re-com-tailwind.core` namespace, in case of future customization.
 
 Functionality and documentation for re-com-tailwind components should be identical to that of [re-com](https://re-com.day8.com.au/).
 
