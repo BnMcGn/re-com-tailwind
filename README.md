@@ -9,68 +9,47 @@
 
 # re-com-tailwind
 
-An extension of the [Re-Com](https://github.com/day8/re-com) UI component library that is meant for use with [TailwindCSS](https://tailwindcss.com/). Re-com-tailwind does not rely on Bootstrap.
+An extension of the [Re-Com](https://github.com/day8/re-com) UI component library that is meant for use with [TailwindCSS](https://tailwindcss.com/).
 
 ## State of the Project
 
-- All dependencies from bootstrap.css removed
-- Not completely converted to tailwind, ALPHA, mvp, etc.
-- Still dependent on [various] css files
+re-com-tailwind is in its minimally viable infancy. Right now it consists of re-com with the bootstrap dependencies removed. Many of the css values have not been converted to tailwind style classes. There are still dependencies on other css files. CSS Purity has not been attained.
 
-## Basic Usage
+If you would like to help out, please see the [issues](https://github.com/BnMcGn/re-com-tailwind/issues) page.
 
-- look at re-com 
-- might use [build system]
+### Limitations
 
-
-
-
-[Reagent](http://reagent-project.github.io). 
-
-[Bootstrap](http://getbootstrap.com/)  [Material Design Icons](http://zavoloklom.github.io/material-design-iconic-font/icons.html).
+- It's probably a bad idea to use re-com-tailwind and regular re-com components at the same time, because re-com-tailwind tampers with the css structures in re-com.
 
 
 ## Demo
 
-
-2. Compiling And Running The Demo
+   Run this in the re-com-tailwind directory:
    
    ```shell
    lein watch
    ```
    
-   This will run the demo, by doing:
-     - a clean
-     - a compile
-   
-   Wait until `[:demo] Build completed.` is displayed in the console indicating
-   the dev HTTP server is ready.
-    
-   Now you can open [`http://localhost:3449/`](http://localhost:3449/) in your
-   browser.
+   Wait until `[:demo] Build completed.` is displayed, then visit [`http://localhost:3449/`](http://localhost:3449/) in your browser.
+
+   For comparison, the [original re-com demo](https://re-com.day8.com.au/)
 
 
 
-## Using re-com
+## Using re-com-tailwind
 
-re-com is available from clojars. Add it to your project.clj dependencies:
+re-com-tailwind is available from clojars. Add it to your project.clj dependencies:
 
-[![Clojars Project](https://img.shields.io/clojars/v/re-com.svg)](https://clojars.org/re-com)
+[![Clojars Project](https://img.shields.io/clojars/v/org.clojars.bnmcgn/re-com-tailwind.svg)](https://clojars.org/org.clojars.bnmcgn/re-com-tailwind)
 
-You should now be able to require the `re-com.core` namespace, which exposes all of the API functions documented in the `re-demo` example app.
+The re-com-tailwind components are, at this point, components from re-com with custom css settings. However, it is probably best to require them from the `re-com-tailwind.core` namespace, in case of future customization.
 
-You'll then need to include these asset folders in your app:
-https://github.com/day8/re-com/tree/master/run/resources/public/assets
+Functionality and documentation for re-com-tailwind components should be identical to that of [re-com](https://re-com.day8.com.au/).
 
-As far as your `index.html` is concerned, take inspiration from here:
-https://github.com/day8/re-com/tree/master/run/resources/public
+You'll need to include these asset folders in your app:
+https://github.com/BnMcGn/re-com-tailwind/tree/master/run/resources/public/assets
 
-In particular, you'll need bootstrap (assumedly via a CDN):
-```html
-<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/css/bootstrap.css">
-```
-
-And a reference to these two CSS files (make sure `re-com.css` appears after `bootstrap.css`):
+Your html file will need a reference to these two CSS files:
 
 ```html
 <link rel="stylesheet" href="assets/css/material-design-iconic-font.min.css">
@@ -85,11 +64,10 @@ And a reference to the Roboto fonts (but this can be overridden relatively easil
 ```
 
 
-
-
 ### License
 
 Copyright © 2015-2021 Michael Thompson
+
 Copyright © 2022-2023 Ben McGunigle
 
 Distributed under The MIT License (MIT) - See LICENSE.txt
