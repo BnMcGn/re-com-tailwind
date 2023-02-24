@@ -9,7 +9,7 @@
 
 # re-com-tailwind
 
-An extension of the [Re-Com](https://github.com/day8/re-com) UI component library that is meant for use with [TailwindCSS](https://tailwindcss.com/).
+An extension of the [re-com](https://github.com/day8/re-com) UI component library that is meant for use with [TailwindCSS](https://tailwindcss.com/).
 
 ## State of the Project
 

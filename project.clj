@@ -4,7 +4,7 @@
 
 ;; ---------------------------------------------------------------------------------------
 
-(defproject         re-com-tailwind "2.13.2" #_"lein-git-inject/version"
+(defproject         org.clojars.bnmcgn/re-com-tailwind "2.13.2" #_"lein-git-inject/version"
   :description      "Tailwind version of the Re-com component library"
   :url              "https://github.com/bnmcgn/re-com-tailwind.git"
   :license          {:name "MIT"}
@@ -16,7 +16,7 @@
                                org.clojure/google-closure-library-third-party]]
                  [thheller/shadow-cljs        "2.15.2"   :scope "provided"]
                  [reagent                     "1.1.0"    :scope "provided"]
-                 [re-com "2.13.2"]]
+                 [org.clojars.bnmcgn/re-com "2.13.2-CUSTOM.1"]]
 
   :plugins      [[day8/lein-git-inject    "0.0.15"]
                  [lein-shadow             "0.4.0"]
