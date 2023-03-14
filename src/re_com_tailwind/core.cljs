@@ -28,6 +28,9 @@
     [re-com.tour           :as tour]
     [re-com.v-table        :as v-table]
     [re-com.simple-v-table :as simple-v-table]
+    [re-com.validate       :as validate]
+    [re-com.util           :as util]
+    [re-com.config         :as config]
     [re-com-tailwind.css-spec]))
 
 ;; -----------------------------------------------------------------------------
@@ -114,3 +117,23 @@
 (def make-tour-nav              tour/make-tour-nav)
 
 (def stack-spy                  debug/stack-spy)
+(def ->attr                     debug/->attr)
+
+(def html-attr?                 validate/html-attr?)
+(def parts?                     validate/parts?)
+(def regex?                     validate/regex?)
+(def string-or-atom?            validate/string-or-atom?)
+(def throbber-sizes-list        validate/throbber-sizes-list)
+(def throbber-size?             validate/throbber-size?)
+(def css-style?                 validate/css-style?)
+(def string-or-hiccup?          validate/string-or-hiccup?)
+(def input-status-type?         validate/input-status-type?)
+(def number-or-string?          validate/number-or-string?)
+(def input-status-types-list    validate/input-status-types-list)
+
+(def add-map-to-hiccup-call     util/add-map-to-hiccup-call)
+(def deref-or-value             util/deref-or-value)
+(def px                         util/px)
+(def merge-css                  util/merge-css)
+
+(def include-args-desc?         config/include-args-desc?)
