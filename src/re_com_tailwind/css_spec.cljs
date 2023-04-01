@@ -3,7 +3,7 @@
    [re-com-tailwind.functions :refer
     [flex-child-style flex-flow-style justify-style align-style scroll-style =date calculate-split-flex-style px
      tw-alert tw-btn-group tw-btn-group-button tw-btn-group-vertical tw-btn-group-button-vertical
-     tw-btn tw-btn-base tw-btn-default tw-btn-selected
+     tw-btn tw-btn-base tw-btn-default tw-btn-selected tw-btn-default-disabled
      tw-tab tw-tab-active
      tw-fade-in
      tw-form-control tw-form-control-feedback]]
@@ -163,8 +163,11 @@
   {:main {:class ["rc-border"]}})
 
 (set! re-com.buttons/button-css-spec
-      {:main {:class (tw-btn ["rc-button"])
-          :style (flex-child-style "none") }
+  {:main {:class (fn [{:keys [class disabled?]}]
+                   (cond-> ["rc-button"]
+                     true tw-btn
+                     (empty? class) ((if disabled? tw-btn-default-disabled tw-btn-default))))
+          :style (flex-child-style "none")}
    :wrapper {:class ["rc-button-wrapper" "display-inline-flex"]}
    :tooltip {:class ["rc-button-tooltip"]}})
 
