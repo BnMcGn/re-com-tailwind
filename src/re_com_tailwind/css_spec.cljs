@@ -659,17 +659,17 @@ rounded-t-md"]
 
 
 (set! re-com.popover/popover-border-css-spec
-  {:main {:class (tw-fade-in
-                      ["block absolute p-0 w-64 min-w-0 max-w-none min-h-0 font-sans not-italic font-normal normal-case whitespace-normal break-normal bg-clip-padding bg-white rounded-md border border-solid opacity-100 border-stone-300
+  {:main {:class  ["block absolute p-0 w-64 min-w-0 max-w-none min-h-0 font-sans not-italic font-normal normal-case whitespace-normal break-normal bg-clip-padding bg-white rounded-md border border-solid opacity-100 border-stone-300
 
 leading-snug text-base tracking-normal shadow-lg z-50 list-outside no-underline text-left bg-clip-padding drop-shadow-none left-0 top-0 max-w-xs p-px"
-                       "popover" "rc-popover-border"])
+                       "popover" "rc-popover-border"]
           :style (fn [{:keys [top left width height background-color border-color tooltip-style?
-                              orientation margin-left margin-top ready-to-show?] :as params}]
+                              orientation margin-left margin-top ready-to-show? right bottom]
+                       :as params}]
                    (merge
                     (into {}
                           (for [k [:top :left :width :height :background-color :border-color
-                                   :margin-left :margin-top]
+                                   :margin-left :margin-top :right :bottom]
                                 :let [v (get params k)]
                                 :when v]
                             [k v]))
