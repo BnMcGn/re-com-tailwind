@@ -4,7 +4,7 @@
 
 ;; ---------------------------------------------------------------------------------------
 
-(defproject         org.clojars.bnmcgn/re-com-tailwind "2.13.2" #_"lein-git-inject/version"
+(defproject         org.clojars.bnmcgn/re-com-tailwind "2.13.2.1" #_"lein-git-inject/version"
   :description      "Tailwind version of the Re-com component library"
   :url              "https://github.com/bnmcgn/re-com-tailwind.git"
   :license          {:name "MIT"}
