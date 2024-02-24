@@ -26,6 +26,7 @@
     [re-com.text           :as text]
     [re-com.throbber       :as throbber]
     [re-com.tour           :as tour]
+    [re-com.tree-select    :as tree-select]
     [re-com.v-table        :as v-table]
     [re-com.simple-v-table :as simple-v-table]
     [re-com.validate       :as validate]
@@ -115,6 +116,9 @@
 (def make-tour                  tour/make-tour)
 (def start-tour                 tour/start-tour)
 (def make-tour-nav              tour/make-tour-nav)
+
+(def tree-select                tree-select/tree-select)
+(def tree-select-dropdown       tree-select/tree-select-dropdown)
 
 (def stack-spy                  debug/stack-spy)
 (def ->attr                     debug/->attr)

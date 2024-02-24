@@ -34,6 +34,7 @@
    [re-com.text]
    [re-com.throbber]
    [re-com.tour]
+   [re-com.tree-select]
    [re-com.v-table]
    [re-com.simple-v-table]
 
@@ -1065,6 +1066,55 @@ transition-[none_0s_ease_0s] shadow-sm"
                  :style {:margin-right "15px"}}
    :next-button {:class (fn [{:keys [last-button?]}]
                           ["btn-default" (if last-button? "rc-tour-btn-finish" "rc-tour-btn-next")])}})
+
+(set! re-com.tree-select/tree-select-dropdown-css-spec
+  {:main {:class ["rc-tree-select-dropdown" "fade" "in"]
+         :style {:position "relative"}}
+   :wrapper {:class ["rc-tree-select-dropdown-wrapper"]
+             :style (fn [{:keys [max-width min-width]}]
+                      {:display  "inline-block"
+                       :max-width max-width
+                       :min-width min-width})}
+   :anchor {:class ["rc-tree-select-dropdown-anchor"]
+            :style (fn [{:keys [disabled? min-width max-width]}]
+                     {:min-width        min-width
+                      :max-width        max-width
+                      :background-color (if disabled? "#EEE" "white")
+                      :border           "1px solid lightgrey"
+                      :border-radius    "2px"
+                      :overflow         "hidden"
+                      :cursor           (if disabled? "default" "pointer")})}
+   :anchor-label {:style (fn [{:keys [max-width]}]
+                           {:max-width     max-width
+                            :white-space   "nowrap"
+                            :overflow      "hidden"
+                            :text-overflow "ellipsis"})}
+   :counter {:class ["rc-tree-select-dropdown-counter"]
+             :style {:margin-left "10px"
+                     :margin-right "10px"
+                     :opacity "50%"}}
+   :anchor-expander {:class ["rc-tree-select-dropdown-anchor-expander"]}
+   :backdrop {:class ["rc-tree-select-dropdown-backdrop"]}
+   :dropdown-wrapper {:class ["rc-tree-select-dropdown-dropdown-wrapper"]
+                      :style {:position         "absolute"
+                              :background-color "white"
+                              :border-radius    "4px"
+                              :border           "1px solid #ccc"
+                              :padding          "5px 10px 5px 5px"
+                              :box-shadow       "0 5px 10px rgba(0, 0, 0, .2)"}}
+   :body {:class ["rc-tree-select-dropdown-body"]}})
+
+(set! re-com.tree-select/tree-select-css-spec
+      {:main {:class ["rc-tree-select"]}
+       :wrapper {:class ["rc-tree-select-wrapper"]
+                 :style {:overflow-y "scroll"}}
+       :choice {:class ["rc-tree-select-choice"]}
+       :group {:class ["rc-tree-select-group"]}
+       :offset {:class ["rc-tree-select-offset"]
+                :style {:visibility "hidden"}}
+       :expander {:class ["rc-tree-select-expander"]
+                  :style {:cursor "pointer"}}
+       :checkbox {:class ["rc-tree-select-checkbox"]}})
 
 (set! re-com.typeahead/typeahead-css-spec
   {:main {:class ["rc-typeahead"]}
