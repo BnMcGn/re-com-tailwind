@@ -8,6 +8,7 @@
             [reagent.dom                   :as    rdom]
             [alandipert.storage-atom       :refer [local-storage]]
             [secretary.core                :as    secretary]
+            [re-com-tailwind.core]
             [re-com.core                   :refer [at h-box v-box box gap line scroller border label p title alert-box h-split] :refer-macros [handler-fn]]
             [re-com.config                 :refer [version]]
             [re-com.util                   :refer [get-element-by-id item-for-id]]

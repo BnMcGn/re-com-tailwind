@@ -12,6 +12,7 @@
    [re-com.datepicker :refer [iso8601->date datepicker-parts-desc datepicker-dropdown-args-desc]]
    [re-com.validate   :refer [date-like?]]
    [re-com.util       :refer [now->utc px]]
+   [re-com-tailwind.functions :refer [tw-btn tw-btn-default]]
    [re-demo.utils     :refer [panel-title title2 title3 parts-table args-table github-hyperlink status-text]])
   (:import
    [goog.i18n DateTimeSymbols_pl]))
@@ -183,7 +184,7 @@
                                                               (reset! model1 (plus @model1 (days 1))))]
                                             [button :src (at)
                                              :label    "Reset"
-                                             :class    "btn btn-default"
+                                             :class    (tw-btn-default (tw-btn))
                                              :style    {:padding  "1px 4px"}
                                              :on-click #(reset! model1 nil)]]]]]
                   enabled-days

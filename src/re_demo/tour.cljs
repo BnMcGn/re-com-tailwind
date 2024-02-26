@@ -1,5 +1,6 @@
 (ns re-demo.tour
   (:require [re-com.core   :refer [at h-box v-box box gap align-style make-tour start-tour make-tour-nav button popover-content-wrapper popover-anchor-wrapper p]]
+            [re-com-tailwind.functions :refer [tw-btn-info]]
             [re-demo.utils :refer [panel-title title2 github-hyperlink status-text]]))
 
 (defn demo
@@ -26,7 +27,7 @@
                                           :label    "Start Tour!"
                                           :on-click #(start-tour demo-tour)
                                           :style    {:font-weight "bold" :color "yellow"}
-                                          :class    "btn-info"]
+                                          :class (tw-btn-info)]
                                :popover [popover-content-wrapper :src (at)
                                          :width    "250px"
                                          :title    [:strong "Tour 1 of 4"]
@@ -38,7 +39,7 @@
                                :position :below-center
                                :anchor   [button :src (at)
                                           :label "another element in the tour"
-                                          :class "btn-info"]
+                                          :class (tw-btn-info)]
                                :popover [popover-content-wrapper :src (at)
                                          :width    "250px"
                                          :title    [:strong "Tour 2 of 4"]
@@ -50,7 +51,7 @@
                                :position :right-below
                                :anchor   [button :src (at)
                                           :label "and another"
-                                          :class "btn-info"
+                                          :class (tw-btn-info)
                                           :style (when (:step3 demo-tour) {:position "relative" :z-index 10})] ;; Make the anchor appear above the backdrop
                                :popover [popover-content-wrapper :src (at)
                                          :width            "250px"
@@ -65,7 +66,7 @@
                                :position :above-center
                                :anchor   [button :src (at)
                                           :label "last one"
-                                          :class "btn-info"]
+                                          :class (tw-btn-info)]
                                :popover [popover-content-wrapper :src (at)
                                          :width    "420px"
                                          :title    [:strong "Tour 4 of 4"]
