@@ -1,8 +1,6 @@
 (ns re-demo.tour
   (:require [re-com.core   :refer [at h-box v-box box gap align-style make-tour start-tour make-tour-nav button popover-content-wrapper popover-anchor-wrapper p]]
-            [re-com-tailwind.functions :refer [tw-btn-info]]
             [re-demo.utils :refer [panel-title title2 github-hyperlink status-text]]))
-
 
 (defn demo
   []
@@ -28,31 +26,31 @@
                                           :label    "Start Tour!"
                                           :on-click #(start-tour demo-tour)
                                           :style    {:font-weight "bold" :color "yellow"}
-                                          :class (tw-btn-info)]
+                                          :class    "btn-info"]
                                :popover [popover-content-wrapper :src (at)
                                          :width    "250px"
                                          :title    [:strong "Tour 1 of 4"]
                                          :body     [:div "So, you clicked the button below and the tour started. Click the 'Next' button to proceed to the next step."
-                                                   [make-tour-nav demo-tour]]]
+                                                    [make-tour-nav demo-tour]]]
                                :style   (align-style :align-self :center)]
                               [popover-anchor-wrapper :src (at)
                                :showing? (:step2 demo-tour)
                                :position :below-center
                                :anchor   [button :src (at)
                                           :label "another element in the tour"
-                                          :class (tw-btn-info)]
+                                          :class "btn-info"]
                                :popover [popover-content-wrapper :src (at)
                                          :width    "250px"
                                          :title    [:strong "Tour 2 of 4"]
                                          :body     [:div "Here's the second tour popover. Now you can advance to the next one, or go back to the first, or finish the tour by clicking the close 'X' button above."
-                                                   [make-tour-nav demo-tour]]]
+                                                    [make-tour-nav demo-tour]]]
                                :style   (align-style :align-self :end)]
                               [popover-anchor-wrapper :src (at)
                                :showing? (:step3 demo-tour)
                                :position :right-below
                                :anchor   [button :src (at)
                                           :label "and another"
-                                          :class (tw-btn-info)
+                                          :class "btn-info"
                                           :style (when (:step3 demo-tour) {:position "relative" :z-index 10})] ;; Make the anchor appear above the backdrop
                                :popover [popover-content-wrapper :src (at)
                                          :width            "250px"
@@ -67,13 +65,12 @@
                                :position :above-center
                                :anchor   [button :src (at)
                                           :label "last one"
-                                          :class (tw-btn-info)]
+                                          :class "btn-info"]
                                :popover [popover-content-wrapper :src (at)
                                          :width    "420px"
                                          :title    [:strong "Tour 4 of 4"]
                                          :body     [:div "Lucky last tour popover. The tour component renders a 'Finish' button instead of a 'Next button for the last popover."
                                                     [make-tour-nav demo-tour]]]]]]]])))
-
 
 (defn panel2
   []
@@ -81,8 +78,8 @@
    :size     "auto"
    :gap      "10px"
    :children [[panel-title  "Tour Components"
-                            "src/re_com/tour.cljs"
-                            "src/re_demo/tour.cljs"]
+               "src/re_com/tour.cljs"
+               "src/re_demo/tour.cljs"]
               [h-box :src (at)
                :gap      "100px"
                :children [[v-box :src (at)
@@ -108,7 +105,6 @@
                            :size      "auto"
                            :min-width "400px"
                            :children  [[demo]]]]]]])
-
 
 ;; core holds a reference to panel, so need one level of indirection to get figwheel updates
 (defn panel

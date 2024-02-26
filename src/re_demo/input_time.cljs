@@ -3,9 +3,7 @@
             [re-com.input-time :refer [input-time-parts-desc input-time-args-desc]]
             [re-demo.utils     :refer [panel-title title2 title3 parts-table args-table github-hyperlink status-text]]
             [re-com.util       :refer [px]]
-            [re-com-tailwind.functions :refer [tw-btn tw-btn-default]]
             [reagent.core      :as    reagent]))
-
 
 (defn- simulated-bools
   [disabled? hide-border? show-icon?]
@@ -83,11 +81,11 @@
                                            :align :center
                                            :children [[button :src (at)
                                                        :label    "11am"
-                                                       :class    (tw-btn-default (tw-btn))
+                                                       :class    "btn btn-default"
                                                        :on-click #(reset! an-int-time 1100)]
                                                       [button :src (at)
                                                        :label    "5pm"
-                                                       :class    (tw-btn-default (tw-btn))
+                                                       :class    "btn btn-default"
                                                        :on-click #(reset! an-int-time 1700)]]]
                                           [gap :src (at) :size "20px"]
                                           [title :src (at) :level :level3 :label "Simulated minimum & maximum changes"]
@@ -116,8 +114,8 @@
    :size     "auto"
    :gap      "10px"
    :children [[panel-title "[input-time ... ]"
-                            "src/re_com/input_time.cljs"
-                            "src/re_demo/input_time.cljs"]
+               "src/re_com/input_time.cljs"
+               "src/re_demo/input_time.cljs"]
               [h-box :src (at)
                :gap "100px"
                :children [[v-box :src (at)
@@ -132,7 +130,6 @@
                                       [args-table input-time-args-desc]]]
                           [basics-demo]]]
               [parts-table "input-time" input-time-parts-desc]]])
-
 
 ;; core holds a reference to panel, so need one level of indirection to get figwheel updates
 (defn panel

@@ -3,9 +3,7 @@
             [re-com.modal-panel :refer [modal-panel-parts-desc modal-panel-args-desc]]
             [re-demo.utils      :refer [panel-title title2 title3 parts-table args-table github-hyperlink status-text]]
             [re-com.util        :refer [px]]
-            [re-com-tailwind.functions :refer [tw-btn-info tw-btn tw-btn-primary tw-btn-danger]]
             [reagent.core       :as    reagent]))
-
 
 (defn please-wait-message
   "Create a button to show a 'Please wait...' message for 3 seconds"
@@ -15,7 +13,7 @@
       [v-box :src (at)
        :children [[button :src (at)
                    :label    "Please wait message"
-                   :class    (tw-btn-info (tw-btn))
+                   :class    "btn-info"
                    :on-click (fn []
                                (reset! show? true)
                                (js/setTimeout #(reset! show? false) 3000))]
@@ -23,7 +21,6 @@
                     [modal-panel :src (at)
                      :backdrop-on-click #(reset! show? false)
                      :child             [:span "Please wait for 3 seconds" [:br] "(or click on backdrop)"]])]])))
-
 
 (defn progress-bar-with-cancel-button
   "Create a button to show a modal with progress bar and cancel button. Not actually operational."
@@ -33,7 +30,7 @@
       [v-box :src (at)
        :children [[button :src (at)
                    :label    "Progress bar with cancel button"
-                   :class    (tw-btn-info (tw-btn))
+                   :class    "btn-info"
                    :on-click #(reset! show? true)]
                   (when @show?
                     [modal-panel :src (at)
@@ -48,11 +45,10 @@
                                         [h-box :src (at)
                                          :children [[button :src (at)
                                                      :label    "Cancel"
-                                                     :class    (tw-btn-danger (tw-btn))
+                                                     :class    "btn-danger"
                                                      :style    {:margin-right "15px"}
                                                      :on-click #(reset! show? false)]
                                                     [:span "pretend only, click Cancel" [:br] "(or click on backdrop)"]]]]]])]])))
-
 
 (defn dialog-markup
   [form-data process-ok process-cancel]
@@ -89,12 +85,11 @@
                         :gap      "12px"
                         :children [[button :src (at)
                                     :label    "Sign in"
-                                    :class    (tw-btn-primary (tw-btn))
+                                    :class    "btn-primary"
                                     :on-click process-ok]
                                    [button :src (at)
                                     :label    "Cancel"
                                     :on-click process-cancel]]]]]])
-
 
 (defn modal-dialog
   "Create a button to test the modal component for modal dialogs"
@@ -118,18 +113,18 @@
       [v-box :src (at)
        :children [[button :src (at)
                    :label    "Modal Dialog"
-                   :class    (tw-btn-info (tw-btn))
+                   :class    "btn-info"
                    :on-click #(do
-                               (reset! save-form-data @form-data)
-                               (reset! show? true))]
+                                (reset! save-form-data @form-data)
+                                (reset! show? true))]
                   (when @show? [modal-panel :src (at)
-                                   :backdrop-color   "grey"
-                                   :backdrop-opacity 0.4
-                                   :style            {:font-family "Consolas"}
-                                   :child            [dialog-markup
-                                                      form-data
-                                                      process-ok
-                                                      process-cancel]])]])))
+                                :backdrop-color   "grey"
+                                :backdrop-opacity 0.4
+                                :style            {:font-family "Consolas"}
+                                :child            [dialog-markup
+                                                   form-data
+                                                   process-ok
+                                                   process-cancel]])]])))
 
 (defn panel2
   []
@@ -137,8 +132,8 @@
    :size     "auto"
    :gap      "10px"
    :children [[panel-title "[modal-panel ... ]"
-                            "src/re_com/modal_panel.cljs"
-                            "src/re_demo/modal_panel.cljs"]
+               "src/re_com/modal_panel.cljs"
+               "src/re_demo/modal_panel.cljs"]
 
               [h-box :src (at)
                :gap      "100px"
@@ -165,8 +160,6 @@
                                                   [progress-bar-with-cancel-button]
                                                   [modal-dialog]]]]]]]
               [parts-table "modal-panel" modal-panel-parts-desc]]])
-
-
 
 ;; core holds a reference to panel, so need one level of indirection to get figwheel updates
 (defn panel

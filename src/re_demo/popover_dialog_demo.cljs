@@ -1,9 +1,7 @@
 (ns re-demo.popover-dialog-demo
   (:require [re-com.core  :refer [at h-box v-box box gap line label checkbox radio-button button single-dropdown popover-content-wrapper popover-anchor-wrapper]]
             [re-com.util  :refer [deref-or-value]]
-            [re-com-tailwind.functions :refer [tw-btn tw-btn-primary tw-btn-danger]]
             [reagent.core :as    reagent]))
-
 
 (defn popover-body
   [dialog-data on-change & {:keys [showing-injected? position-injected]}]  ;; v0.10.0 breaking change fix (was [showing? position dialog-data on-change])
@@ -48,21 +46,20 @@
                                      [h-box :src (at)
                                       :gap      "10px"
                                       :children [[button :src (at)
-                                                  :label    [:span [:i {:class "zmdi zmdi-check" }] " Apply"]
+                                                  :label    [:span [:i {:class "zmdi zmdi-check"}] " Apply"]
                                                   :on-click #(submit-dialog @dialog-data)
-                                                  :class    (tw-btn-primary)]
+                                                  :class    "btn-primary"]
                                                  [popover-anchor-wrapper :src (at)
                                                   :showing? show-tooltip?
                                                   :position :right-below
                                                   :anchor   [button :src (at)
-                                                             :label    [:span [:i {:class "zmdi zmdi-close" }] " Cancel"]
+                                                             :label    [:span [:i {:class "zmdi zmdi-close"}] " Cancel"]
                                                              :on-click cancel-dialog]
                                                   :popover  [popover-content-wrapper :src (at) ;; NOTE: didn't specify on-cancel here (handled properly)
                                                              :width         "250px"
                                                              :title         "This is the cancel button"
                                                              :close-button? false
                                                              :body          "You can even have a popover over a popover!"]]]]]]])))
-
 
 (defn popover-dialog-demo
   [position]
@@ -77,7 +74,7 @@
        :anchor   [button :src (at)
                   :label    "Dialog box"
                   :on-click #(reset! showing? true)
-                  :class    (tw-btn-danger)]
+                  :class    "btn btn-danger"]
        :popover  [popover-body dialog-data on-change]])))  ;; v0.10.0 breaking change fix (was [popover-body showing? @position dialog-data on-change])
 
 
