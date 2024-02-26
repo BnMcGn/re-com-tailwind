@@ -267,7 +267,8 @@
   {:wrapper {:class ["rc-checkbox-wrapper" "noselect"]}
    :main {:class ["rc-checkbox"]
           :style (merge (flex-child-style "none")
-                        {:cursor "default"})}
+                        {:cursor "default"
+                         :margin-top "4px"})}
    :label {:class ["rc-checkbox-label"]
            :style (merge (flex-child-style "none")
                          {:padding-left "8px"
@@ -767,7 +768,8 @@ transition-[none_0s_ease_0s] shadow-sm"
   {:main {:class ["rc-radio-button"]
           :style (merge
                   (flex-child-style "none")
-                  {:cursor "default"})}
+                  {:cursor "default"
+                   :margin-top "4px"})}
    :wrapper {:class ["rc-radio-button-wrapper" "noselect"]}
    :label {:class ["rc-radio-button-label"]
            :style (merge (flex-child-style "none")
